@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Rentopolis
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](/public/img/logo.png)
 
-## Available Scripts
+## Integrantes
 
-In the project directory, you can run:
+*   Juan Sebastián Frásica Galeano
+*   Carlos Julián Gómez Ardila
+*   Juan Carlos García Garzón
+*   Davor Cortés
+*   Diego Chinchilla
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Descripción de la aplicación
+Rentopolis es una aplicación web realizada como proyecto para la materia **Arquitecturas de Software (ARSW)** de la Escuela Colombiana de Ingeniería Julio Garavito.
+Es una app cuyo propósito es ser una plataforma que proporcione la conexión entre las personas que desean comprar, rentar o alquilar artículos.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Justificación
+En ocasiones las personas necesitan distintos artículos como herramientas, dispositivos tecnológicos, productos de entretenimiento, entre otros, que no requieren ser comprados ya que su nivel de uso común es bajo, y en muchas ocasiones estos pueden tener un valor monetario alto que puede ser inasequible para muchos. Del mismo modo, muchas personas tienen en su posesión elementos que no son utilizados y que, en lugar de simplemente estar ocupando espacio, podrían estar generando utilidades. Puede suceder que un usuario no esté seguro de comprar un producto, para ello puede alquilarlo y tomar una mejor decisión. Por esta razón, una aplicación que facilite el negocio de alquiler no es sólo beneficioso para las personas del común, sino también para empresas de alquiler que no son tan reconocidas, y que podrían aprovechar a Rentopolis para potenciar su negocio.
 
-### `npm run build`
+## Despliegue en Heroku
+ 
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)]()
+ 
+ 
+ ## Integración continua
+ 
+ [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 
+ ## SonarCloud
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Historias de usuario
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1.	COMO Usuario QUIERO Iniciar Sesión PARA PODER autenticarme ante el sistema satisfactoriamente.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Mockups
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Arquitectura y diseño detallado de la aplicación
 
-### Analyzing the Bundle Size
+## Diagrama de casos de uso
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Diagrama de clases
 
-### Making a Progressive Web App
+## Diagrama de datos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Diagrama de componentes
 
-### Advanced Configuration
+## Diagrama de despliegue
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+ 
