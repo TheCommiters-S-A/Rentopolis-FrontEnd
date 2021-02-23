@@ -10,7 +10,7 @@
 *   Davor Cortés
 *   Diego Chinchilla
 
-
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://rentopolis-front-end.herokuapp.com/)
 
 ## Descripción de la aplicación
 Rentopolis es una aplicación web realizada como proyecto para la asignatura **Innovación y Emprendimiento con TI (IETI)** de la Escuela Colombiana de Ingeniería Julio Garavito.
