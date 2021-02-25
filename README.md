@@ -10,6 +10,8 @@
 *   Davor Cortés
 *   Diego Chinchilla
 
+
+## Despliegue en Heroku
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://rentopolis-front-end.herokuapp.com/)
 
 ## Descripción de la aplicación
@@ -47,45 +49,7 @@ También deberá proporcionar el área en m2, y si tiene alguno de los siguiente
 *   El usuario arrendatario podrá buscar y filtrar por precio, ubicación, tipo de inmueble, # de habitaciones, área
 *   Lo usuarios arrendatarios podrán calificar su experiencia después de haber rentado un inmueble para establecer un puntaje de reputación al respectivo arrendador.
 
-
-## Despliegue en Heroku
  
-[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)]()
- 
- 
- ## Integración continua
- 
- [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/TheCommiters-S-A)
-
- 
- ## SonarCloud
-
- 
-
-
-
-## Historias de usuario
-
-### 1.	COMO Usuario QUIERO Iniciar Sesión PARA PODER autenticarme ante el sistema satisfactoriamente.
-
-
-## Mockups
-
-
-
-
-
-# Arquitectura y diseño detallado de la aplicación
-
-## Diagrama de casos de uso
-
-## Diagrama de clases
-
-## Diagrama de datos
-
-## Diagrama de componentes
-
-## Diagrama de despliegue
 
 
 
