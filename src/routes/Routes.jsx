@@ -9,7 +9,7 @@ class Routes extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <GuardRoute path="/inicio" type="private" component={VistaPrincipal}></GuardRoute>
+                    <Route path="/inicio" type="private" component={VistaPrincipal}></Route>
                     <Route path="/" type="public" component={Bienvenida}></Route>
                 </Switch>
             </BrowserRouter>
