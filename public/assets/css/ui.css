@@ -508,7 +508,6 @@ p:last-child {
   color: #FFF;
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
   z-index: 9;
   position: absolute;
 }
@@ -531,7 +530,6 @@ p:last-child {
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   z-index: 9;
-  position: absolute;
 }
 .slider-banner-slick .slick-prev:before, .slider-banner-slick .slick-next:before {
   display: none;
@@ -981,7 +979,6 @@ a[class*=card]:hover .title {
   position: absolute;
   left: 0;
   bottom: 0;
-  left: 0;
   z-index: 10;
   width: 100%;
   padding: 7px 20px;
