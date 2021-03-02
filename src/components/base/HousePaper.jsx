@@ -1,10 +1,9 @@
-import { Button, Grid, TextField, FormControl, InputLabel, Input, InputAdornment, IconButton } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import House from '../views/Login/casa.svg';
-import Icon from '../views/Login/icon.svg';
+import House from '../../views/Login/casa.svg';
+import Icon from '../../views/Login/icon.svg';
 import 'fontsource-roboto';
-import {LoginForm} from './LoginForm';
 
 
 
@@ -29,7 +28,7 @@ const useStyle = makeStyles({
     }
 });
 
-export const Login = props =>{
+export const HousePaper = ( {component:Component} ) =>{
 
     const classes = useStyle();
 
@@ -50,7 +49,7 @@ export const Login = props =>{
                                 </div>
                             </Grid>
                             <Grid item>
-                                <LoginForm/>
+                                <Component />
                             </Grid>
                         </Grid>
                      </div>  
