@@ -9,203 +9,80 @@ import Select from '@material-ui/core/Select';
 export const Property = (props) => {
 
 
+    const items = [{
+        "name": "Apartamento en arriendo, SUBA, Bogotá D.C",
+        "price": 3402200,
+        "area": "2",
+        "numBathrooms": 4,
+        "numBedrooms": 3,
+        "picture": "assets/images/items/apto3.jpg"
+    }, {
+        "name": "Apartamento en arriendo, ENGATIVA, Bogotá D.C",
+        "price": 1231223,
+        "area": "2",
+        "numBathrooms": 2,
+        "numBedrooms": 3,
+        "picture": "assets/images/items/apto3.jpg"
+    },{
+        "name": "Apartamento en arriendo, CHAPINERO, Bogotá D.C",
+        "price": 3421000,
+        "area": "3",
+        "numBathrooms": 1,
+        "numBedrooms": 3,
+        "picture": "assets/images/items/apto3.jpg"
+    }
+    ];
 
     return (
         <div>
             <article className="card card-product-list">
                 <div className="row no-gutters">
-                    <aside className="col-md-3">
-                        <a href="#" className="img-wrap">
-                            <span className="badge badge-danger"> NEW </span>
-                            <img src="assets/images/items/3.jpg"/>
-                        </a>
+                    <aside className="col-md-8">
+                        <span className="badge badge-danger"> Nuevo </span>
+                        <img className="img-wrap" src={props.picture}/>
+                        {/*<img className="img-wrap" src={props.picture}/>*/}
                     </aside>
-                    <div className="col-md-6">
-                        <div className="info-main">
-                            <a href="#" className="h5 title"> Great product name goes here </a>
-                            <div className="rating-wrap mb-3">
-                                <ul className="rating-stars">
-                                    <li className="stars-active w-80">
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <div className="label-rating">7/10</div>
-                            </div>
-
-                            <p> Take it as demo specs, ipsum dolor sit amet, consectetuer adipiscing
-                                elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi
-                                enim ad minim veniam </p>
-                        </div>
-                    </div>
-                    <aside className="col-sm-3">
-                        <div className="info-aside">
-                            <div className="price-wrap">
-                                <span className="price h5"> $140 </span>
-                                <del className="price-old"> $198</del>
-                            </div>
-                            <p className="text-success">Free shipping</p>
+                    <div className="col-md-4">
+                        <div className="info-main" align="center">
+                            <a href="#" className="h5 title"> {props.name} </a>
+                            {/*<a href="#" className="h5 title"> Apartamento en arriendo, SUBA, Bogotá D.C </a>*/}
                             <br/>
-                            <p>
-                                <a href="#" className="btn btn-primary btn-block"> Details </a>
-                                <a href="#" className="btn btn-light btn-block"><i
-                                    className="fa fa-heart"></i>
-                                    <span className="text">Add to wishlist</span>
-                                </a>
-                            </p>
+                            <p className="text-black-50">Precio de arriendo </p>
+                            <span className="price h3"> $ {props.price} </span>
                         </div>
-                    </aside>
-                </div>
-            </article>
-            <article className="card card-product-list">
-                <div className="row no-gutters">
-                    <aside className="col-md-3">
-                        <a href="#" className="img-wrap"><img src="assets/images/items/4.jpg"/></a>
-                    </aside>
-                    <div className="col-md-6">
-                        <div className="info-main">
-                            <a href="#" className="h5 title"> Great product name goes here </a>
-                            <div className="rating-wrap mb-3">
-                                <ul className="rating-stars">
-                                    <li className="stars-active w-80">
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <div className="label-rating">7/10</div>
-                            </div>
+                        <div className="row no-gutters">
 
-                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum
-                                dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim
-                                veniam </p>
-                        </div>
-                    </div>
-                    <aside className="col-sm-3">
-                        <div className="info-aside">
-                            <div className="price-wrap">
-                                <span className="price h5"> $56 </span>
-                                <del className="price-old"> $85</del>
+                            <div className="col-md-4" align="center">
+                                {/*<p className="text-black-50">Área (m²)</p>*/}
+                                <p className="text-success">Área (m²)</p>
+                                <span className="h5"> {props.area} </span>
+                                <br/>
                             </div>
-                            <p className="text-success">Free shipping</p>
-                            <br/>
-                            <p>
-                                <a href="#" className="btn btn-primary btn-block"> Details </a>
-                                <a href="#" className="btn btn-light btn-block"><i
-                                    className="fa fa-heart"></i>
-                                    <span className="text">Add to wishlist</span></a>
-                            </p>
+                            <div className="col-md-4" align="center">
+                                {/*<p className="text-black-50">Hab.</p>*/}
+                                <p className="text-success">Hab.</p>
+                                <span className="h5"> {props.numBedrooms} </span>
+                                <br/>
+                            </div>
+                            <div className="col-md-4" align="center">
+                                {/*<p className="text-black-50">Baños</p>*/}
+                                <p className="text-success">Baños</p>
+                                <span className="h5"> {props.numBathrooms} </span>
+                                <br/>
+                            </div>
                         </div>
-                    </aside>
+
+                        <br/>
+
+                        <p>
+                            <a href="#" className="btn btn-primary btn-block"> Contactar </a>
+                        </p>
+                    </div>
                 </div>
+
             </article>
 
-            <article className="card card-product-list">
-                <div className="row no-gutters">
-                    <aside className="col-md-3">
-                        <a href="#" className="img-wrap"><img src="assets/images/items/5.jpg"/></a>
-                    </aside>
-                    <div className="col-md-6">
-                        <div className="info-main">
-                            <a href="#" className="h5 title"> Great product name goes here </a>
-                            <div className="rating-wrap mb-3">
-                                <ul className="rating-stars">
-                                    <li className="stars-active w-80">
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <div className="label-rating">7/10</div>
-                            </div>
-
-                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum
-                                dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim
-                                veniam </p>
-                        </div>
-                    </div>
-                    <aside className="col-sm-3">
-                        <div className="info-aside">
-                            <div className="price-wrap">
-                                <span className="price h5"> $56.00 </span>
-                            </div>
-                            <p className="text-success">Free shipping</p>
-                            <br/>
-                            <p>
-                                <a href="#" className="btn btn-primary btn-block"> Details </a>
-                                <a href="#" className="btn btn-light btn-block"><i
-                                    className="fa fa-heart"></i>
-                                    <span className="text">Add to wishlist</span>
-                                </a>
-                            </p>
-                        </div>
-                    </aside>
-                </div>
-            </article>
-
-            <article className="card card-product-list">
-                <div className="row no-gutters">
-                    <aside className="col-md-3">
-                        <a href="#" className="img-wrap"><img src="assets/images/items/6.jpg"/></a>
-                    </aside>
-                    <div className="col-md-6">
-                        <div className="info-main">
-                            <a href="#" className="h5 title"> Product name can be here </a>
-                            <div className="rating-wrap mb-3">
-                                <ul className="rating-stars">
-                                    <li className="stars-active w-80">
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i> <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <div className="label-rating">7/10</div>
-                            </div>
-
-                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum
-                                dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim
-                                veniam </p>
-                        </div>
-                    </div>
-                    <aside className="col-sm-3">
-                        <div className="info-aside">
-                            <div className="price-wrap">
-                                <span className="price h5"> $62 </span>
-                            </div>
-                            <p className="text-success">Free shipping</p>
-                            <br/>
-                            <p>
-                                <a href="#" className="btn btn-primary btn-block"> Details </a>
-                                <a href="#" className="btn btn-light btn-block"><i
-                                    className="fa fa-heart"></i>
-                                    <span className="text">Add to wishlist</span>
-                                </a>
-                            </p>
-                        </div>
-                    </aside>
-                </div>
-            </article>
         </div>
+
     )
 }
