@@ -314,13 +314,13 @@ export const Filter = (props) => {
 
             <article className="filter-group">
                 <header className="card-header">
-                    <a href="#" data-toggle="collapse" data-target="#collapse_7"
+                    <a href="#" data-toggle="collapse" data-target="#collapse_8"
                        aria-expanded="true" className="">
                         <i className="icon-control fa fa-chevron-down"></i>
                         <h6 className="title">Lo quiero con: </h6>
                     </a>
                 </header>
-                <div className="filter-content collapse show" id="collapse_7">
+                <div className="filter-content collapse show" id="collapse_8">
                     <div className="card-body">
                         <label className="custom-control custom-checkbox">
                             <input type="checkbox" className="custom-control-input"/>

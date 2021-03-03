@@ -1,5 +1,7 @@
 
 import {Buscar} from './Buscar'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 export const Header = (props) => {
     return (
@@ -7,23 +9,26 @@ export const Header = (props) => {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-2 col-4">
-                        <a href="#" className="brand-wrap">
+                        <a style={{fontSize: 30}} href="/inicio" className="brand-wrap">
                             Rentopolis
                         </a>
+                        <img/>
                     </div>
                     <Buscar></Buscar>
+
                     <div className="col-lg-4 col-sm-6 col-12">
                         <div className="widgets-wrap float-md-right">
-                            <div className="widget-header  mr-3">
-                                <a href="#" class="icon icon-sm rounded-circle border">
-                                    <i class="fa fa-shopping-cart"></i>
-                                </a>
-                                <span className="badge badge-pill badge-danger notify">0</span>
-                            </div>
+
                             <div className="widget-header">
                                 <a href="#" class="icon icon-sm rounded-circle border">
-                                    <i class="fa fa-user"></i>
+                                    <AccountCircleIcon style={{fontSize: 30}}/>
                                 </a>
+                            </div>
+                            <div className="widget-header  mr-3">
+                                <a href="#" className="icon icon-sm rounded-circle border">
+                                    <ExitToAppIcon style={{fontSize: 30}}/>
+                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -33,4 +38,3 @@ export const Header = (props) => {
 
     )
 }
-            
