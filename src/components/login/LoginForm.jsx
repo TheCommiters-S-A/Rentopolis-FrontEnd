@@ -1,6 +1,5 @@
 import { Button, Grid, TextField, FormControl, InputLabel, Input, InputAdornment, IconButton } from '@material-ui/core';
 import React, {useState} from 'react';
-import clsx from 'clsx';
 import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Visibility from '@material-ui/icons/Visibility';
