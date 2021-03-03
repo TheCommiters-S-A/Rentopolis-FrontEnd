@@ -5,7 +5,8 @@ import { ThemeProvider } from '@material-ui/styles';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import 'fontsource-roboto';
-
+import { useFirebaseApp } from 'reactfire';
+import 'firebase/auth';
 
 const useStyle = makeStyles({
     textFields:{
@@ -69,8 +70,22 @@ export const LoginForm = props =>{
         event.preventDefault();
     };
 
+    const firebase = useFirebaseApp();
+
+    const singin = async (e) => {
+        e.preventDefault();
+        firebase.auth().signInWithEmailAndPassword( values.user, values.password)
+                             .then( user =>{
+                                alert('Sesión Iniciada');
+                             })
+                             .catch( error =>{
+                                 console.log(error, values.user, values.password)
+                             });
+
+    }
+
     return(
-            <form autoComplete="off">
+            <form autoComplete="off" onSubmit={ singin }>
                 <ThemeProvider theme={theme}>
                         <Grid container direction="column" justify="space-around" alignItems="center" spacing={4}>
                             <Grid item xs={9}>
@@ -78,13 +93,14 @@ export const LoginForm = props =>{
                                     id="user" 
                                     label="Correo" 
                                     size="medium"
+                                    onChange={ handleChange('user') }
                                     InputProps={{
                                         className:classes.textFields
                                     }}
                             />
                             </Grid>
                             <Grid item xs={9}>
-                                <FormControl className={clsx(classes.margin, classes.textField)}>
+                                <FormControl className={classes.textField}>
                                     <InputLabel htmlFor="standard-adornment-password">Contraseña</InputLabel>
                                     <Input
                                         id="standard-adornment-password"
@@ -107,12 +123,10 @@ export const LoginForm = props =>{
                                 </FormControl>
                             </Grid>
                             <Grid item>
-                                <Button color="primary"> Iniciar Sesión</Button>
+                                <Button color="primary" type="submit"> Iniciar Sesión</Button>
                             </Grid>
                         </Grid>
                 </ThemeProvider>
             </form>
     );
-
-
 };
