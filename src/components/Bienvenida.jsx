@@ -15,8 +15,8 @@ export const Bienvenida = (props) => {
 
                         <br/>
                             <div className="actions">
-                                <a href="/inicio" className="btn-get-started">Iniciar Sesión</a>
-                                <a href="/inicio" className="btn-get-started">Registrarse</a>
+                                <a href="/login" className="btn-get-started">Iniciar Sesión</a>
+                                <a href="/registro" className="btn-get-started">Registrarse</a>
                             </div>
                     </div>
                 </div>

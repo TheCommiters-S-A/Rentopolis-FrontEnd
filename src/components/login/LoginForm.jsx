@@ -1,39 +1,17 @@
 import { Button, Grid, TextField, FormControl, InputLabel, Input, InputAdornment, IconButton } from '@material-ui/core';
 import React, {useState} from 'react';
-import clsx from 'clsx';
 import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import House from '../views/Login/casa.svg';
-import Icon from '../views/Login/icon.svg';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import 'fontsource-roboto';
-
+import { useFirebaseApp } from 'reactfire';
+import 'firebase/auth';
 
 const useStyle = makeStyles({
-    houseContainer:{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: `url(${House}) no-repeat center`,
-        backgroundSize: "contain",
-        height: "400px",
-        position: "relative",
-        zIndex: 1
-    },
-
     textFields:{
         color: '#fff',
     },
-
-    icon:{
-        background: `url(${Icon}) no-repeat center`,
-        backgroundSize: "contain",
-        position: "relative",
-        height: "100px",
-        zIndex:3
-
-    }
 });
 
 const theme = createMuiTheme({
@@ -92,8 +70,22 @@ export const LoginForm = props =>{
         event.preventDefault();
     };
 
+    const firebase = useFirebaseApp();
+
+    const signin = async (e) => {
+        e.preventDefault();
+        await firebase.auth().signInWithEmailAndPassword( values.user, values.password)
+                             .then( user =>{
+                                alert('Sesión Iniciada');
+                             })
+                             .catch( error =>{
+                                 console.log(error, values.user, values.password)
+                             });
+
+    }
+
     return(
-            <form>
+            <form autoComplete="off" onSubmit={ signin }>
                 <ThemeProvider theme={theme}>
                         <Grid container direction="column" justify="space-around" alignItems="center" spacing={4}>
                             <Grid item xs={9}>
@@ -101,13 +93,14 @@ export const LoginForm = props =>{
                                     id="user" 
                                     label="Correo" 
                                     size="medium"
+                                    onChange={ handleChange('user') }
                                     InputProps={{
                                         className:classes.textFields
                                     }}
                             />
                             </Grid>
                             <Grid item xs={9}>
-                                <FormControl className={clsx(classes.margin, classes.textField)}>
+                                <FormControl className={classes.textField}>
                                     <InputLabel htmlFor="standard-adornment-password">Contraseña</InputLabel>
                                     <Input
                                         id="standard-adornment-password"
@@ -130,12 +123,10 @@ export const LoginForm = props =>{
                                 </FormControl>
                             </Grid>
                             <Grid item>
-                                <Button color="primary"> Iniciar Sesión</Button>
+                                <Button color="primary" type="submit"> Iniciar Sesión</Button>
                             </Grid>
                         </Grid>
                 </ThemeProvider>
             </form>
     );
-
-
 };
