@@ -2,6 +2,7 @@ import React from 'react';
 import {Header} from './Header'
 import {Filter} from "./Filter";
 import {Properties} from "./Properties";
+import {Footer} from "./Footer";
 
 export const VistaPrincipal = (props) => {
     return (
@@ -61,17 +62,7 @@ export const VistaPrincipal = (props) => {
                 </div>
             </section>
 
-            <footer className="section-footer border-top padding-y">
-                <div className="container">
-                    <p className="float-md-right">
-                        &copy; Copyright 2021 All rights reserved
-                    </p>
-                    <p>
-                        <a href="#">Terms and conditions</a>
-                    </p>
-                </div>
-            </footer>
-
+            <Footer/>
 
         </div>
     )
