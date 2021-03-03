@@ -38,11 +38,10 @@ export const Property = (props) => {
             <article className="card card-product-list">
                 <div className="row no-gutters">
                     <aside className="col-md-8">
-                        <span className="badge badge-danger"> Nuevo </span>
                         <img className="img-wrap" src={props.picture}/>
                         {/*<img className="img-wrap" src={props.picture}/>*/}
                     </aside>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                         <div className="info-main" align="center">
                             <a href="#" className="h5 title"> {props.name} </a>
                             {/*<a href="#" className="h5 title"> Apartamento en arriendo, SUBA, Bogotá D.C </a>*/}
