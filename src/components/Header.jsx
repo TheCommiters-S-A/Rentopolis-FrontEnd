@@ -20,15 +20,14 @@ export const Header = (props) => {
                         <div className="widgets-wrap float-md-right">
 
                             <div className="widget-header">
-                                <a href="#" class="icon icon-sm rounded-circle border">
-                                    <AccountCircleIcon style={{fontSize: 30}}/>
+                                <a href="#" class="icon icon-sm ">
+                                    <AccountCircleIcon style={{fontSize: 40}}/>
                                 </a>
                             </div>
                             <div className="widget-header  mr-3">
-                                <a href="#" className="icon icon-sm rounded-circle border">
-                                    <ExitToAppIcon style={{fontSize: 30}}/>
+                                <a href="#" className="icon icon-sm ">
+                                    <ExitToAppIcon style={{fontSize: 40}}/>
                                 </a>
-
                             </div>
                         </div>
                     </div>
