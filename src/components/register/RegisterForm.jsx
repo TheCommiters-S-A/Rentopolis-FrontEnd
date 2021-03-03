@@ -1,13 +1,11 @@
 import { Button, Grid, TextField, FormControl, InputLabel, Input, InputAdornment, IconButton } from '@material-ui/core';
 import React, {useState} from 'react';
-import clsx from 'clsx';
 import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import 'fontsource-roboto';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 
 
 const useStyle = makeStyles({
