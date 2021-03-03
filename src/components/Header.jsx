@@ -25,7 +25,7 @@ export const Header = (props) => {
                                 </a>
                             </div>
                             <div className="widget-header  mr-3">
-                                <a href="#" className="icon icon-sm ">
+                                <a href="/" className="icon icon-sm ">
                                     <ExitToAppIcon style={{fontSize: 40}}/>
                                 </a>
                             </div>
