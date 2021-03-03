@@ -157,8 +157,8 @@ a:hover {
 
 /* ============== spacing ============== */
 .padding-y {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 5px;
+  padding-bottom: 20px;
 }
 
 .padding-top {
@@ -919,7 +919,8 @@ a[class*=card]:hover .title {
   margin-bottom: 20px;
 }
 .card-product-list .img-wrap {
-  height: 220px;
+  height: 380px;
+  width: 465.33px;
   border-radius: 0.37rem 0 0 0.37rem;
 }
 .card-product-list .info-main {
@@ -1343,7 +1344,7 @@ a[class*=card]:hover .title {
 /* ================== PAGES =================== */
 /* ================ PAGES HEADER ================== */
 .section-pagetop {
-  padding: 45px 0;
+  padding: 20px 0;
 }
 
 /* ================== PAGE DETAILS ==================  */
