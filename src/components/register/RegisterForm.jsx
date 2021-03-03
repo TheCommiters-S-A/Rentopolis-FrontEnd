@@ -5,6 +5,8 @@ import { ThemeProvider } from '@material-ui/styles';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import 'fontsource-roboto';
+import { useFirebaseApp } from 'reactfire';
+import 'firebase/auth';
 
 
 
@@ -77,8 +79,22 @@ export const RegisterForm = props =>{
         event.preventDefault();
     };
 
+    const firebase = useFirebaseApp();
+
+    const signup = async (e) =>{
+        e.preventDefault()
+        await firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
+                             .then((response)=>{
+                                 alert(`Ya eres parte de Rentópolis ${values.name} ${values.lastName} !`);
+                                 console.log(response);
+                             })
+                             .catch( error =>{
+                                 console.log(error);
+                             });
+    }
+
     return(
-            <form autoComplete="off">
+            <form autoComplete="off" onSubmit={ signup }>
                 <ThemeProvider theme={theme}>
                     <Grid container alignItems="center" justify="center" spacing={2}>
                         <Grid item xs={10} sm={2}>
@@ -138,7 +154,7 @@ export const RegisterForm = props =>{
                             </FormControl>
                         </Grid>
                         <Grid item xs={12}>
-                            <Button color="primary"> Registrarse </Button>
+                            <Button color="primary" type="submit"> Registrarse </Button>
                         </Grid>
                     </Grid>    
                 </ThemeProvider>

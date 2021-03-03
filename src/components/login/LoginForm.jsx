@@ -72,9 +72,9 @@ export const LoginForm = props =>{
 
     const firebase = useFirebaseApp();
 
-    const singin = async (e) => {
+    const signin = async (e) => {
         e.preventDefault();
-        firebase.auth().signInWithEmailAndPassword( values.user, values.password)
+        await firebase.auth().signInWithEmailAndPassword( values.user, values.password)
                              .then( user =>{
                                 alert('Sesión Iniciada');
                              })
@@ -85,7 +85,7 @@ export const LoginForm = props =>{
     }
 
     return(
-            <form autoComplete="off" onSubmit={ singin }>
+            <form autoComplete="off" onSubmit={ signin }>
                 <ThemeProvider theme={theme}>
                         <Grid container direction="column" justify="space-around" alignItems="center" spacing={4}>
                             <Grid item xs={9}>
