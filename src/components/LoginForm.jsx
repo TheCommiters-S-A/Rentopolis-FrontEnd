@@ -3,15 +3,37 @@ import React, {useState} from 'react';
 import clsx from 'clsx';
 import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import House from '../views/Login/casa.svg';
+import Icon from '../views/Login/icon.svg';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import 'fontsource-roboto';
 
 
 const useStyle = makeStyles({
+    houseContainer:{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: `url(${House}) no-repeat center`,
+        backgroundSize: "contain",
+        height: "400px",
+        position: "relative",
+        zIndex: 1
+    },
+
     textFields:{
         color: '#fff',
     },
+
+    icon:{
+        background: `url(${Icon}) no-repeat center`,
+        backgroundSize: "contain",
+        position: "relative",
+        height: "100px",
+        zIndex:3
+
+    }
 });
 
 const theme = createMuiTheme({
@@ -71,7 +93,7 @@ export const LoginForm = props =>{
     };
 
     return(
-            <form autoComplete="off">
+            <form>
                 <ThemeProvider theme={theme}>
                         <Grid container direction="column" justify="space-around" alignItems="center" spacing={4}>
                             <Grid item xs={9}>
