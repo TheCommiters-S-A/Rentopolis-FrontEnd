@@ -107,13 +107,7 @@ export const RegisterForm = props => {
     }
 
     const postNewUser=(id,_name,phoneNumber,email,passwd)=>{
-        axios.post('http://192.168.0.7:8080/users', {
-                "id": id,
-                "Name": _name,
-                "phoneNumber": phoneNumber,
-                "email": email,
-                "passwd": passwd
-            }).then(function(response){
+        axios.get('http://192.168.0.7:8080/home/users').then(function(response){
                 console.log(response);
             })
     }
