@@ -103,13 +103,13 @@ export const RegisterForm = props => {
                 })
                 console.log(error);
             });
-            postNewUser(0,values.name+" "+values.lastName,"1333333",values.email,values.password);
+            postNewUser(null,values.name+" "+values.lastName,"1333333",values.email,values.password);
     }
 
         const postNewUser=(id,_name,phoneNumber,email,passwd)=>{
-        axios.post('http://localhost:8080/home/users', {
+        axios.post('http://192.168.0.11:8080/home/user', {
                 "id": id,
-                "Name": _name,
+                "name": _name,
                 "phoneNumber": phoneNumber,
                 "email": email,
                 "passwd": passwd
