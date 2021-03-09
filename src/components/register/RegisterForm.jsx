@@ -106,11 +106,18 @@ export const RegisterForm = props => {
             postNewUser(0,values.name+" "+values.lastName,"1333333",values.email,values.password);
     }
 
-    const postNewUser=(id,_name,phoneNumber,email,passwd)=>{
-        axios.get('http://192.168.0.7:8080/home/users').then(function(response){
+        const postNewUser=(id,_name,phoneNumber,email,passwd)=>{
+        axios.post('http://localhost:8080/home/users', {
+                "id": id,
+                "Name": _name,
+                "phoneNumber": phoneNumber,
+                "email": email,
+                "passwd": passwd
+            }).then(function(response){
                 console.log(response);
             })
     }
+    
 
     return (
         <form autoComplete="off" onSubmit={signup}>
