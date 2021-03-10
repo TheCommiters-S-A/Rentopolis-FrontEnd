@@ -10,6 +10,7 @@ import 'firebase/auth';
 import Swal from "sweetalert2";
 import Link from '@material-ui/core/Link';
 import Typography from "@material-ui/core/Typography";
+import * as UserAPI from './../api/UserAPI.js';
 
 
 const useStyle = makeStyles({
@@ -101,7 +102,10 @@ export const RegisterForm = props => {
                 })
                 console.log(error);
             });
+            UserAPI.postNewUser(null,values.name+" "+values.lastName,"1333333",values.email,values.password);
     }
+
+    
 
     return (
         <form autoComplete="off" onSubmit={signup}>
