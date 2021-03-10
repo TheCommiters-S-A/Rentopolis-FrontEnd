@@ -11,7 +11,6 @@ import Swal from "sweetalert2";
 import Link from '@material-ui/core/Link';
 import Typography from "@material-ui/core/Typography";
 import * as UserAPI from './../api/UserAPI.js';
-import axios from 'axios';
 
 
 const useStyle = makeStyles({

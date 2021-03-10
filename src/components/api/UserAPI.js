@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-
+const apiaddr = 'http://localhost:8080'
+const apiaddrH = 'https://rentopolis.herokuapp.com'
 export function postNewUser(id,_name,phoneNumber,email,passwd){
-    axios.post('http://192.168.0.11:8080/home/user', {
+    axios.post(apiaddrH+'/home/user', {
         "id": id,
         "name": _name,
         "phoneNumber": phoneNumber,
