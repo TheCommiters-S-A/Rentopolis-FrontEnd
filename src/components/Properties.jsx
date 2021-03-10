@@ -1,8 +1,26 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import {Property} from './Property';
+import Swal from "sweetalert2";
 
 
 export const Properties = (props) => {
+
+    const [properties, setProperties] = useState([]);
+
+    useEffect(() => {
+        axios.get("https://rentopolis.herokuapp.com/home/properties")
+            .then(response => {
+                let result = response.data;
+                setProperties(result);
+            }).catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.message,
+            })
+        });
+    }, []);
 
     let items = [{
         "name": "Apartamento en arriendo, SUBA, Bogotá D.C",
@@ -29,15 +47,16 @@ export const Properties = (props) => {
     ];
 
     return (
+
         <div>
 
-            {items.map((item, i) => {
+            {properties.map((item, i) => {
                 return (<Property key={i}
-                                  name={item.name}
+                                  name={item.description}
                                   price={item.price}
                                   area={item.area}
-                                  numBathrooms={item.numBathrooms}
-                                  numBedrooms={item.numBedrooms}
+                                  numBathrooms={item.numberOfBathRooms}
+                                  numBedrooms={item.numberOfRooms}
                                   picture={item.picture}
                     />
                 );
