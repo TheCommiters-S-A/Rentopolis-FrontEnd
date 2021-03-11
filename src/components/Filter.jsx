@@ -152,9 +152,9 @@ export const Filter = (props) => {
                 <article className="filter-group">
                     <header className="card-header">
                         <a href="#" data-toggle="collapse" data-target="#collapse_7"
-                           aria-expanded="true" className="">
+                           aria-expanded="true">
                             <i className="icon-control fa fa-chevron-down"></i>
-                            <h6 className="title">Área (m2)</h6>
+                            <h6 className="title">Área (m²)</h6>
                         </a>
                     </header>
                     <div className="filter-content collapse show" id="collapse_7">
@@ -172,13 +172,13 @@ export const Filter = (props) => {
                                             value={areaMinima}
                                             onChange={handleChangeAreaMinima}
                                         >
-                                            <MenuItem value={10}>60 m2</MenuItem>
-                                            <MenuItem value={20}>100 m2</MenuItem>
-                                            <MenuItem value={30}>200 m2</MenuItem>
-                                            <MenuItem value={10}>300 m2</MenuItem>
-                                            <MenuItem value={20}>400 m2</MenuItem>
-                                            <MenuItem value={30}>500 m2</MenuItem>
-                                            <MenuItem value={10}>1200 m2 +</MenuItem>
+                                            <MenuItem value={60}>60 (m²)</MenuItem>
+                                            <MenuItem value={100}>100 (m²)</MenuItem>
+                                            <MenuItem value={200}>200 (m²)</MenuItem>
+                                            <MenuItem value={300}>300 (m²)</MenuItem>
+                                            <MenuItem value={400}>400 (m²)</MenuItem>
+                                            <MenuItem value={500}>500 (m²)</MenuItem>
+                                            <MenuItem value={1200}>1200 (m²) +</MenuItem>
                                         </Select>
                                     </FormControl>
                                 </div>
@@ -192,13 +192,13 @@ export const Filter = (props) => {
                                             value={areaMaxima}
                                             onChange={handleChangeAreaMaxima}
                                         >
-                                            <MenuItem value={10}>60 m2</MenuItem>
-                                            <MenuItem value={20}>100 m2</MenuItem>
-                                            <MenuItem value={30}>200 m2</MenuItem>
-                                            <MenuItem value={10}>300 m2</MenuItem>
-                                            <MenuItem value={20}>400 m2</MenuItem>
-                                            <MenuItem value={30}>500 m2</MenuItem>
-                                            <MenuItem value={10}>1200 m2 +</MenuItem>
+                                            <MenuItem value={60}>60 (m²)</MenuItem>
+                                            <MenuItem value={100}>100 (m²)</MenuItem>
+                                            <MenuItem value={200}>200 (m²)</MenuItem>
+                                            <MenuItem value={300}>300 (m²)</MenuItem>
+                                            <MenuItem value={400}>400 (m²)</MenuItem>
+                                            <MenuItem value={500}>500 (m²)</MenuItem>
+                                            <MenuItem value={1200}>1200 (m²) +</MenuItem>
                                         </Select>
                                     </FormControl>
                                 </div>
@@ -236,7 +236,7 @@ export const Filter = (props) => {
                             </label>
                             <label className="checkbox-btn">
                                 <input type="checkbox"/>
-                                <span className="btn btn-light"> 5+ </span>
+                                <span className="btn btn-light"> 5 </span>
                             </label>
                         </div>
                     </div>
@@ -270,45 +270,45 @@ export const Filter = (props) => {
                             </label>
                             <label className="checkbox-btn">
                                 <input type="checkbox"/>
-                                <span className="btn btn-light"> 5+ </span>
+                                <span className="btn btn-light"> 5 </span>
                             </label>
                         </div>
                     </div>
                 </article>
 
-                <article className="filter-group">
-                    <header className="card-header">
-                        <a href="#" data-toggle="collapse" data-target="#collapse_6"
-                           aria-expanded="true" className="">
-                            <i className="icon-control fa fa-chevron-down"></i>
-                            <h6 className="title">Garajes </h6>
-                        </a>
-                    </header>
-                    <div className="filter-content collapse show" id="collapse_6">
-                        <div className="card-body" align="center">
-                            <label className="checkbox-btn">
-                                <input type="checkbox"/>
-                                <span className="btn btn-light"> 1 </span>
-                            </label>
-                            <label className="checkbox-btn">
-                                <input type="checkbox"/>
-                                <span className="btn btn-light"> 2 </span>
-                            </label>
-                            <label className="checkbox-btn">
-                                <input type="checkbox"/>
-                                <span className="btn btn-light"> 3 </span>
-                            </label>
-                            <label className="checkbox-btn">
-                                <input type="checkbox"/>
-                                <span className="btn btn-light"> 4 </span>
-                            </label>
-                            <label className="checkbox-btn">
-                                <input type="checkbox"/>
-                                <span className="btn btn-light"> 5+ </span>
-                            </label>
-                        </div>
-                    </div>
-                </article>
+                {/*<article className="filter-group">*/}
+                {/*    <header className="card-header">*/}
+                {/*        <a href="#" data-toggle="collapse" data-target="#collapse_6"*/}
+                {/*           aria-expanded="true" className="">*/}
+                {/*            <i className="icon-control fa fa-chevron-down"></i>*/}
+                {/*            <h6 className="title">Garajes </h6>*/}
+                {/*        </a>*/}
+                {/*    </header>*/}
+                {/*    <div className="filter-content collapse show" id="collapse_6">*/}
+                {/*        <div className="card-body" align="center">*/}
+                {/*            <label className="checkbox-btn">*/}
+                {/*                <input type="checkbox"/>*/}
+                {/*                <span className="btn btn-light"> 1 </span>*/}
+                {/*            </label>*/}
+                {/*            <label className="checkbox-btn">*/}
+                {/*                <input type="checkbox"/>*/}
+                {/*                <span className="btn btn-light"> 2 </span>*/}
+                {/*            </label>*/}
+                {/*            <label className="checkbox-btn">*/}
+                {/*                <input type="checkbox"/>*/}
+                {/*                <span className="btn btn-light"> 3 </span>*/}
+                {/*            </label>*/}
+                {/*            <label className="checkbox-btn">*/}
+                {/*                <input type="checkbox"/>*/}
+                {/*                <span className="btn btn-light"> 4 </span>*/}
+                {/*            </label>*/}
+                {/*            <label className="checkbox-btn">*/}
+                {/*                <input type="checkbox"/>*/}
+                {/*                <span className="btn btn-light"> 5+ </span>*/}
+                {/*            </label>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</article>*/}
 
             </div>
 

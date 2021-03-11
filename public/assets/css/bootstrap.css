@@ -1039,6 +1039,13 @@ pre code {
     max-width: 100%;
   }
 
+  .col-md-12-new {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
   .order-md-first {
     order: -1;
   }
@@ -2019,7 +2026,7 @@ textarea.form-control {
 }
 
 .form-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.2rem;
 }
 
 .form-text {
