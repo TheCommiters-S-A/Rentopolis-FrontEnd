@@ -4,29 +4,20 @@ import {Property} from './Property';
 
 export const Properties = (props) => {
 
-    let items = [{
-        "name": "Apartamento en arriendo, SUBA, Bogotá D.C",
-        "price": 3402200,
-        "area": "2",
-        "numBathrooms": 4,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto3.jpg"
-    }, {
-        "name": "Apartamento en arriendo, ENGATIVA, Bogotá D.C",
-        "price": 1231223,
-        "area": "2",
-        "numBathrooms": 2,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto2.jpg"
-    }, {
-        "name": "Apartamento en arriendo, CHAPINERO, Bogotá D.C",
-        "price": 3421000,
-        "area": "3",
-        "numBathrooms": 1,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto1.jpg"
-    }
-    ];
+    const filters = props.filters;
+
+    let items = props.items;
+
+
+    if(filters.minPrecio!=0){
+        console.log(filters,"---------------------")
+        items = items.filter(item => filters.minPrecio<=item.price);
+    };
+
+    if(filters.maxPrecio!=0){
+        console.log(filters,"---------------------")
+        items = items.filter(item => filters.maxPrecio<=item.price);
+    };
 
     return (
         <div>
@@ -44,5 +35,5 @@ export const Properties = (props) => {
             })}
 
         </div>
-    )
+    );
 }

@@ -5,13 +5,54 @@ import {Properties} from "./Properties";
 import {Footer} from "./Footer";
 
 
+
+
 export const VistaPrincipal = (props) => {
+    let items = [{
+        "name": "Apartamento en arriendo, SUBA, Bogotá D.C",
+        "price": 3402200,
+        "area": "2",
+        "numBathrooms": 4,
+        "numBedrooms": 3,
+        "picture": "assets/images/items/apto3.jpg"
+    }, {
+        "name": "Apartamento en arriendo, ENGATIVA, Bogotá D.C",
+        "price": 1231223,
+        "area": "2",
+        "numBathrooms": 2,
+        "numBedrooms": 3,
+        "picture": "assets/images/items/apto2.jpg"
+    }, {
+        "name": "Apartamento en arriendo, CHAPINERO, Bogotá D.C",
+        "price": 3421000,
+        "area": "3",
+        "numBathrooms": 1,
+        "numBedrooms": 3,
+        "picture": "assets/images/items/apto1.jpg"
+    }
+    ];
+
+    let filters_values = {
+        "minPrecio": 0,
+        "maxPrecio": 0
+    }
+
+    const [filtersState, setFiltersState] = React.useState(filters_values);
 
     const [generalFilter, setGeneralFilter] = React.useState('');
 
     const handleChangeGeneralFilter = (event) => {
         setGeneralFilter(event.target.value);
     };
+
+    const handleFilters=(New_filter)=>{
+        setFiltersState(New_filter)
+        console.log(New_filter);
+    }
+
+    
+    
+
 
     return (
         <div className="App">
@@ -26,7 +67,7 @@ export const VistaPrincipal = (props) => {
             <section className="section-content padding-y">
                 <div className="container">
                     <div className="row">
-                        <Filter></Filter>
+                        <Filter filter={handleFilters} filters={filtersState}></Filter>
                         <main className="col-md-9">
                             <header className="border-bottom mb-4 pb-3">
                                 <div className="form-inline">
@@ -42,7 +83,7 @@ export const VistaPrincipal = (props) => {
 
                                 </div>
                             </header>
-                            <Properties/>
+                            <Properties filters={filtersState} items={items} key={filters_values}/>
 
                             {/*<nav className="mt-4" aria-label="Page navigation sample" >*/}
                             {/*    <ul className="pagination" >*/}
