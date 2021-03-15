@@ -16,10 +16,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Filter = (props) => {
+
+    let filters = props.filters;
+
     const classes = useStyles();
 
     const [areaMinima, setAreaMinima] = React.useState('');
     const [areaMaxima, setAreaMaxima] = React.useState('');
+    const [filterState, setFilterState] = React.useState(filters);
 
     const handleChangeAreaMinima = (event) => {
         setAreaMinima(event.target.value);
@@ -27,6 +31,20 @@ export const Filter = (props) => {
     const handleChangeAreaMaxima = (event) => {
         setAreaMaxima(event.target.value);
     };
+
+    const handleChangeMinPrecio =(e)=>{
+        filters.minPrecio = parseInt(e.target.value);
+        setFilterState(filters);
+    };
+
+    const handleChangeMaxPrecio=(e)=>{
+        filters.maxPrecio = parseInt(e.target.value);
+        setFilterState(filters);
+    }
+    const handleFilter=()=>{
+        console.log(filters);
+        props.filter(filterState);
+    }
 
     return (
 
@@ -136,15 +154,14 @@ export const Filter = (props) => {
                             <div className="form-row">
                                 <div className="form-group col-md-6">
                                     <label>Precio desde (COP):</label>
-                                    <input className="form-control" placeholder="$0" type="number"/>
+                                    <input className="form-control" placeholder="$0" type="number" onChange={handleChangeMinPrecio}/>
                                 </div>
                                 <div className="form-group text-right col-md-6">
                                     <label>Precio hasta (COP):</label>
-                                    <input className="form-control" placeholder="$1,0000"
-                                           type="number"/>
+                                    <input className="form-control" placeholder="$1,0000" type="number" onChange={handleChangeMaxPrecio}/>
                                 </div>
                             </div>
-                            <button className="btn btn-block btn-outline-primary-light">Filtrar precios</button>
+                            <button className="btn btn-block btn-outline-primary-light" onClick={handleFilter}>Filtrar precios</button>
                         </div>
                     </div>
                 </article>

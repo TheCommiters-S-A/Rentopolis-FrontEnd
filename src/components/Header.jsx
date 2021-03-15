@@ -4,6 +4,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 export const Header = (props) => {
+    
     return (
         <section className="header-main border-bottom">
             <div className="container">
