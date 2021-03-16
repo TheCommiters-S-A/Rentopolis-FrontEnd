@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Header} from './Header'
 import {Filter} from "./Filter";
 import {Properties} from "./Properties";
 import {Footer} from "./Footer";
 
-
+const  useForceUpdate=()=>{
+    const [count,setCount]=useState(0);
+    const increment =()=> setCount(prevCount => prevCount + 1);
+    return[increment,count];
+}
 
 
 export const VistaPrincipal = (props) => {
@@ -38,7 +42,7 @@ export const VistaPrincipal = (props) => {
     }
 
     const [filtersState, setFiltersState] = React.useState(filters_values);
-
+    const [forceUpdate,forceUpdateValue]=useForceUpdate();
     const [generalFilter, setGeneralFilter] = React.useState('');
 
     const handleChangeGeneralFilter = (event) => {
@@ -47,6 +51,7 @@ export const VistaPrincipal = (props) => {
 
     const handleFilters=(New_filter)=>{
         setFiltersState(New_filter)
+        forceUpdate()
         console.log(New_filter);
     }
 
@@ -56,7 +61,7 @@ export const VistaPrincipal = (props) => {
 
     return (
         <div className="App">
-            <Header></Header>
+            <Header filter={handleFilters} filters={filtersState}></Header>
 
             <section className="section-pagetop bg">
                 <div className="container">
@@ -83,7 +88,7 @@ export const VistaPrincipal = (props) => {
 
                                 </div>
                             </header>
-                            <Properties filters={filtersState} items={items} key={filters_values}/>
+                            <Properties filters={filtersState} items={items} key={forceUpdateValue}/>
 
                             {/*<nav className="mt-4" aria-label="Page navigation sample" >*/}
                             {/*    <ul className="pagination" >*/}

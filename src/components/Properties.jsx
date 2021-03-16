@@ -19,6 +19,11 @@ export const Properties = (props) => {
         items = items.filter(item => filters.maxPrecio<=item.price);
     };
 
+    if(filters.name!=""){
+        console.log(filters,"---------------------")
+        items = items.filter(item => item.name.includes(filters.name));
+    };
+
     return (
         <div>
 
