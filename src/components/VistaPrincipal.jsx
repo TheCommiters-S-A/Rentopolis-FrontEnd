@@ -37,13 +37,15 @@ export const VistaPrincipal = (props) => {
     ];
 
     let filters_values = {
-        "minPrecio": 0,
-        "maxPrecio": 0
+        "minPrecio": Number.NaN,
+        "maxPrecio": Number.NaN,
+        "name": ""
     }
 
     const [filtersState, setFiltersState] = React.useState(filters_values);
     const [forceUpdate,forceUpdateValue]=useForceUpdate();
     const [generalFilter, setGeneralFilter] = React.useState('');
+    const [itemsState,setItems]=useState(items)
 
     const handleChangeGeneralFilter = (event) => {
         setGeneralFilter(event.target.value);
@@ -88,7 +90,7 @@ export const VistaPrincipal = (props) => {
 
                                 </div>
                             </header>
-                            <Properties filters={filtersState} items={items} key={forceUpdateValue}/>
+                            <Properties filters={filtersState} items={itemsState} key={forceUpdateValue}/>
 
                             {/*<nav className="mt-4" aria-label="Page navigation sample" >*/}
                             {/*    <ul className="pagination" >*/}
