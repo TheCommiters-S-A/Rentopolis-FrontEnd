@@ -43,6 +43,11 @@ export const PublicarInmueble = (props) => {
     const [ubicacion, setUbicacion] = React.useState('');
     const [barrio, setBarrio] = React.useState('');
     const [direccion, setDireccion] = React.useState('');
+    const [tieneAscensor, setTieneAscensor] = React.useState(false);
+    const [tieneMuebles, setTieneMuebles] = React.useState(false);
+    const [tieneVigilancia, setTieneVigilancia] = React.useState(false);
+    const [tieneGym, setTieneGym] = React.useState(false);
+    const [tieneSalonComunal, setTieneSalonComunal] = React.useState(false);
 
     const handleChangeTipoDeInmueble = (event) => {
         setTipoDeInmueble(event.target.value);
@@ -86,6 +91,26 @@ export const PublicarInmueble = (props) => {
 
     const handleChangeDireccion = (event) => {
         setDireccion(event.target.value);
+    };
+
+    const handleChangeTieneAscensor = (event) => {
+        setTieneAscensor(event.target.checked);
+    };
+
+    const handleChangeTieneMuebles = (event) => {
+        setTieneMuebles(event.target.checked);
+    };
+
+    const handleChangeTieneVigilancia = (event) => {
+        setTieneVigilancia(event.target.checked);
+    };
+
+    const handleChangeTieneGym = (event) => {
+        setTieneGym(event.target.checked);
+    };
+
+    const handleChangeTieneSalonComunal = (event) => {
+        setTieneSalonComunal(event.target.checked);
     };
 
     return (
@@ -274,23 +299,23 @@ export const PublicarInmueble = (props) => {
                                                     con: </Typography>
                                                 <div className="card-body">
                                                     <label className="custom-control custom-checkbox">
-                                                        <input type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneAscensor} onChange={handleChangeTieneAscensor} type="checkbox" className="custom-control-input"/>
                                                         <div className="custom-control-label">Ascensor</div>
                                                     </label>
                                                     <label className="custom-control custom-checkbox">
-                                                        <input type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneMuebles} onChange={handleChangeTieneMuebles} type="checkbox" className="custom-control-input"/>
                                                         <div className="custom-control-label">Muebles</div>
                                                     </label>
                                                     <label className="custom-control custom-checkbox">
-                                                        <input type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneVigilancia} onChange={handleChangeTieneVigilancia} type="checkbox" className="custom-control-input"/>
                                                         <div className="custom-control-label">Vigilancia</div>
                                                     </label>
                                                     <label className="custom-control custom-checkbox">
-                                                        <input type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneGym} onChange={handleChangeTieneGym} type="checkbox" className="custom-control-input"/>
                                                         <div className="custom-control-label">Gimnasio</div>
                                                     </label>
                                                     <label className="custom-control custom-checkbox">
-                                                        <input type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneSalonComunal} onChange={handleChangeTieneSalonComunal} type="checkbox" className="custom-control-input"/>
                                                         <div className="custom-control-label">Salón comunal</div>
                                                     </label>
                                                 </div>
