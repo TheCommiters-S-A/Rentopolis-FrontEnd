@@ -9,6 +9,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Button from '@material-ui/core/Button';
+import axios from "axios";
+import Swal from 'sweetalert2';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -113,6 +115,53 @@ export const PublicarInmueble = (props) => {
         setTieneSalonComunal(event.target.checked);
     };
 
+
+    let property = {
+        id: 1213,
+        area: area,
+        price: precio,
+        location: {
+            latitude: 0,
+            longitude: 0
+        },
+        typeProperty: tipoDeInmueble,
+        numberOfRooms: numHabitaciones,
+        communityRoom: tieneSalonComunal,
+        description: descripcion,
+        numberOfBathRooms: numBanos,
+        elevator: tieneAscensor,
+        surveillance: tieneVigilancia,
+        gym: tieneGym,
+        furniture: tieneMuebles,
+        image: "imagen base 64",
+        address: direccion,
+        neighborhood: barrio,
+        stratum: estrato
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(property)
+        axios.post("http://localhost:8080/home/property", property)
+            .then(response => {
+                return response.data;
+            })
+            .then(Response => {
+                Swal.fire(
+                    '¡Súper!',
+                    'Inmueble publicado',
+                    'success'
+                )
+            }).catch(error => {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Error publicando el inmueble'
+            })
+        });
+    }
+
     return (
         <div className="App">
             <HeaderSimple></HeaderSimple>
@@ -130,7 +179,7 @@ export const PublicarInmueble = (props) => {
                             <div class="container wow fadeInUp">
                                 <div class="col-lg-10 col-md-8">
                                     <div class="form">
-                                        <form>
+                                        <form onSubmit={handleSubmit}>
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> Tipo de
                                                     inmueble:</Typography>
@@ -158,7 +207,8 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> Descripción corta
                                                     de tu inmueble: </Typography>
-                                                <TextField required className={classes.formControl2} label="Escribe algo característico de tu propiedad"
+                                                <TextField required className={classes.formControl2}
+                                                           label="Escribe algo característico de tu propiedad"
                                                            value={descripcion} onChange={handleChangeDescripcion}
                                                            variant="outlined"
                                                 />
@@ -197,7 +247,7 @@ export const PublicarInmueble = (props) => {
                                                     en: </Typography>
 
                                                 <TextField required className={classes.formControl} id="ubicacion"
-                                                           label="Ubicación"
+                                                           label="Ciudad o municipio"
                                                            value={ubicacion} onChange={handleChangeUbicacion}
                                                            variant="outlined"/>
                                             </div>
@@ -299,23 +349,32 @@ export const PublicarInmueble = (props) => {
                                                     con: </Typography>
                                                 <div className="card-body">
                                                     <label className="custom-control custom-checkbox">
-                                                        <input checked={tieneAscensor} onChange={handleChangeTieneAscensor} type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneAscensor}
+                                                               onChange={handleChangeTieneAscensor} type="checkbox"
+                                                               className="custom-control-input"/>
                                                         <div className="custom-control-label">Ascensor</div>
                                                     </label>
                                                     <label className="custom-control custom-checkbox">
-                                                        <input checked={tieneMuebles} onChange={handleChangeTieneMuebles} type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneMuebles}
+                                                               onChange={handleChangeTieneMuebles} type="checkbox"
+                                                               className="custom-control-input"/>
                                                         <div className="custom-control-label">Muebles</div>
                                                     </label>
                                                     <label className="custom-control custom-checkbox">
-                                                        <input checked={tieneVigilancia} onChange={handleChangeTieneVigilancia} type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneVigilancia}
+                                                               onChange={handleChangeTieneVigilancia} type="checkbox"
+                                                               className="custom-control-input"/>
                                                         <div className="custom-control-label">Vigilancia</div>
                                                     </label>
                                                     <label className="custom-control custom-checkbox">
-                                                        <input checked={tieneGym} onChange={handleChangeTieneGym} type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneGym} onChange={handleChangeTieneGym}
+                                                               type="checkbox" className="custom-control-input"/>
                                                         <div className="custom-control-label">Gimnasio</div>
                                                     </label>
                                                     <label className="custom-control custom-checkbox">
-                                                        <input checked={tieneSalonComunal} onChange={handleChangeTieneSalonComunal} type="checkbox" className="custom-control-input"/>
+                                                        <input checked={tieneSalonComunal}
+                                                               onChange={handleChangeTieneSalonComunal} type="checkbox"
+                                                               className="custom-control-input"/>
                                                         <div className="custom-control-label">Salón comunal</div>
                                                     </label>
                                                 </div>
