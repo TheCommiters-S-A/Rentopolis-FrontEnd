@@ -111,11 +111,6 @@ export const Filter = (props) => {
                             </label>
                             <label className="custom-control custom-checkbox">
                                 <input type="checkbox" className="custom-control-input"/>
-                                <div className="custom-control-label">Edificio de oficinas
-                                    <b className="badge badge-pill badge-light float-right">30</b></div>
-                            </label>
-                            <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
                                 <div className="custom-control-label">Consultorios
                                     <b className="badge badge-pill badge-light float-right">30</b></div>
                             </label>
