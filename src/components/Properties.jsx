@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 
 export const Properties = (props) => {
 
+
+
     const [properties, setProperties] = useState([]);
 
     useEffect(() => {
@@ -18,6 +20,7 @@ export const Properties = (props) => {
 
                 }
                 setProperties(finalProperties)
+                props.amountProperties(finalProperties.length)
 
                 // let result = response.data;
                 // setProperties(result);
