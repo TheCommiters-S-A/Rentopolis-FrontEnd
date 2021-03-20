@@ -11,8 +11,16 @@ export const Properties = (props) => {
     useEffect(() => {
         axios.get("https://rentopolis.herokuapp.com/home/properties")
             .then(response => {
-                let result = response.data;
-                setProperties(result);
+                var APIResponse = response.data;
+                let finalProperties = [...properties]
+                if (APIResponse.length !== properties.length) {
+                    finalProperties = APIResponse
+
+                }
+                setProperties(finalProperties)
+
+                // let result = response.data;
+                // setProperties(result);
             }).catch(error => {
             Swal.fire({
                 icon: 'error',
@@ -20,7 +28,7 @@ export const Properties = (props) => {
                 text: error.message,
             })
         });
-    }, []);
+    }, [properties]);
 
     let items = [{
         "name": "Apartamento en arriendo, SUBA, Bogotá D.C",
