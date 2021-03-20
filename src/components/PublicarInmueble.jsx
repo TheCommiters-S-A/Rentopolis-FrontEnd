@@ -133,7 +133,7 @@ export const PublicarInmueble = (props) => {
         surveillance: tieneVigilancia,
         gym: tieneGym,
         furniture: tieneMuebles,
-        image: "imagen base 64",
+        image: imagen,
         address: direccion,
         neighborhood: barrio,
         stratum: estrato
@@ -189,6 +189,7 @@ export const PublicarInmueble = (props) => {
                                                             id="demo-simple-select"
                                                             value={tipoDeInmueble}
                                                             onChange={handleChangeTipoDeInmueble}
+                                                            required
                                                     >
                                                         <MenuItem value={"Apartamento"}>Apartamento</MenuItem>
                                                         <MenuItem value={"Apartaestudio"}>Apartaestudio</MenuItem>
@@ -211,6 +212,7 @@ export const PublicarInmueble = (props) => {
                                                            label="Escribe algo característico de tu propiedad"
                                                            value={descripcion} onChange={handleChangeDescripcion}
                                                            variant="outlined"
+                                                           required
                                                 />
                                             </div>
 
@@ -222,7 +224,7 @@ export const PublicarInmueble = (props) => {
                                                     variant="contained"
                                                     component="label"
                                                 >
-                                                    <input value={imagen} onChange={handleChangeImagen} type="file"/>
+                                                    <input  required value={imagen} onChange={handleChangeImagen} type="file"/>
                                                 </Button>
                                             </div>
 
@@ -247,7 +249,7 @@ export const PublicarInmueble = (props) => {
                                                     en: </Typography>
 
                                                 <TextField required className={classes.formControl} id="ubicacion"
-                                                           label="Ciudad o municipio"
+                                                           label="Ciudad o municipio" required
                                                            value={ubicacion} onChange={handleChangeUbicacion}
                                                            variant="outlined"/>
                                             </div>
@@ -258,7 +260,7 @@ export const PublicarInmueble = (props) => {
                                                 <TextField required className={classes.formControl} id="direccion"
                                                            placeholder="Ej: Cra 34 # 12-23"
                                                            value={direccion} onChange={handleChangeDireccion}
-                                                           variant="outlined"/>
+                                                           variant="outlined" required/>
                                             </div>
 
                                             <div className="form-group">
@@ -267,7 +269,7 @@ export const PublicarInmueble = (props) => {
                                                 <TextField required className={classes.formControl} id="barrio"
                                                            placeholder="Ej: Chicó"
                                                            value={barrio} onChange={handleChangeBarrio}
-                                                           variant="outlined"/>
+                                                           variant="outlined" required/>
                                             </div>
 
                                             <div className="form-group">
@@ -277,7 +279,7 @@ export const PublicarInmueble = (props) => {
                                                     <Select
                                                         labelId="estrato"
                                                         id="estrato"
-                                                        value={estrato}
+                                                        value={estrato} required
                                                         onChange={handleChangeEstrato}
                                                     >
                                                         <MenuItem value={1}>1</MenuItem>
@@ -315,6 +317,7 @@ export const PublicarInmueble = (props) => {
                                                         id="numHabitaciones"
                                                         value={numHabitaciones}
                                                         onChange={handleChangeNumHabitaciones}
+                                                        required
                                                     >
                                                         <MenuItem value={1}>1</MenuItem>
                                                         <MenuItem value={2}>2</MenuItem>
@@ -334,6 +337,7 @@ export const PublicarInmueble = (props) => {
                                                         id="numBanos"
                                                         value={numBanos}
                                                         onChange={handleChangeNumBanos}
+                                                        required
                                                     >
                                                         <MenuItem value={1}>1</MenuItem>
                                                         <MenuItem value={2}>2</MenuItem>
