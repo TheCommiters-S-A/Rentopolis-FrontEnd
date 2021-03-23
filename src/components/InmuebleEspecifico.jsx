@@ -32,25 +32,21 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
     root: {
-        minWidth: 275,
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
+        minWidth: 200,
     },
     title: {
         fontSize: 14,
     },
     pos: {
-        marginBottom: 12,
+        marginBottom: 1,
+        marginTop: 30
     },
 }));
 
 export const InmuebleEspecifico = (props) => {
 
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+
     return (
         <div className="App">
             <HeaderSimple></HeaderSimple>
@@ -79,36 +75,63 @@ export const InmuebleEspecifico = (props) => {
                                             useGPURender={true}
                                         />
                                     </div>
-                                    <br/>
-                                    <Card className={classes.root} variant="outlined">
-                                        <CardContent>
-                                            <Typography className={classes.title} color="textSecondary" gutterBottom>
-                                                Word of the Day
-                                            </Typography>
-                                            <Typography variant="h5" component="h2">
-                                                be{bull}nev{bull}o{bull}lent
-                                            </Typography>
-                                            <Typography className={classes.pos} color="textSecondary">
-                                                adjective
-                                            </Typography>
-                                            <Typography variant="body2" component="p">
-                                                well meaning and kindly.
-                                                <br/>
-                                                {'"a benevolent smile"'}
-                                            </Typography>
-                                        </CardContent>
-                                        <CardActions>
-                                            <Button size="small">Learn More</Button>
-                                        </CardActions>
-                                    </Card>
                                 </div>
-
-
                             </div>
-
-
                         </main>
+                        <div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <Card className={classes.root} variant="outlined">
+                                <CardContent>
+                                    <Typography variant="h6" align="center" color="textSecondary">
+                                        Área construida
+                                    </Typography>
+                                    <Typography align="center" variant="h5" component="h2">
+                                        12 m²
+                                    </Typography>
+
+
+                                    <Typography variant="h6" align="center" className={classes.pos}
+                                                color="textSecondary">
+                                        Habitaciones
+                                    </Typography>
+                                    <Typography align="center" variant="h5" component="h2">
+                                        4
+                                    </Typography>
+
+                                    <Typography variant="h6" align="center" className={classes.pos}
+                                                color="textSecondary">
+                                        Baños
+                                    </Typography>
+                                    <Typography align="center" variant="h5" component="h2">
+                                        3
+                                    </Typography>
+
+
+                                </CardContent>
+
+                            </Card>
+                            <br/>
+                            <p>
+                                <a href="#" className="btn btn-primary btn-block"> Contactar al anunciante </a>
+                            </p>
+                        </div>
                     </div>
+                </div>
+            </section>
+
+            <br/>
+            <section className="section-pagetop bg">
+                <div className="container">
+                    <h3 className="title-page">Datos principales del inmueble:</h3>
+                </div>
+            </section>
+
+            <br/>
+            <section className="section-pagetop bg">
+                <div className="container">
+                    <h3 className="title-page">Características del inmueble:</h3>
                 </div>
             </section>
 
