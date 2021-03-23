@@ -3,10 +3,10 @@ import {HeaderSimple} from "./HeaderSimple";
 import SimpleImageSlider from "react-simple-image-slider";
 import {makeStyles} from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import ClearIcon from '@material-ui/icons/Clear';
 import Typography from '@material-ui/core/Typography';
+import CheckIcon from '@material-ui/icons/Check';
 
 const images = [
     {url: "assets/images/items/apto2.jpg"},
@@ -53,7 +53,7 @@ export const InmuebleEspecifico = (props) => {
 
             <section className="section-pagetop bg">
                 <div className="container">
-                    <h2 className="title-page">Detalle del inmueble:</h2>
+                    <h2 className="title-page">Apartamento en Chicó</h2>
                 </div>
             </section>
 
@@ -79,7 +79,11 @@ export const InmuebleEspecifico = (props) => {
                             </div>
                         </main>
                         <div>
-                            <br/>
+                            <h5 align="center">Arriendo:</h5>
+                            <Typography align="center" variant="h5" component="h2">
+                                $ 800.000
+                            </Typography>
+
                             <br/>
                             <br/>
                             <Card className={classes.root} variant="outlined">
@@ -108,14 +112,19 @@ export const InmuebleEspecifico = (props) => {
                                         3
                                     </Typography>
 
+                                    <Typography variant="h6" align="center" className={classes.pos}
+                                                color="textSecondary">
+                                        Estrato
+                                    </Typography>
+                                    <Typography align="center" variant="h5" component="h2">
+                                        4
+                                    </Typography>
+
 
                                 </CardContent>
 
                             </Card>
                             <br/>
-                            <p>
-                                <a href="#" className="btn btn-primary btn-block"> Contactar al anunciante </a>
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -124,16 +133,37 @@ export const InmuebleEspecifico = (props) => {
             <br/>
             <section className="section-pagetop bg">
                 <div className="container">
-                    <h3 className="title-page">Datos principales del inmueble:</h3>
+                    <h3 className="title-page">Características del inmueble:</h3>
+                    <br/>
+
+                    <h6>Tipo de inmueble:</h6>
+                    <p>Apartaestudio</p>
+                    <br/>
+
+                    <CheckIcon/>
+                    <h6>Ascensor</h6>
+                    <br/>
+
+                    <CheckIcon/>
+                    <h6>Tiene vigilancia</h6>
+                    <br/>
+
+                    <ClearIcon/>
+                    <h6>Gimnasio</h6>
+                    <br/>
+
+
+                    <ClearIcon/>
+                    <h6>Amoblado</h6>
+                    <br/>
+
+                    <CheckIcon/>
+                    <h6>Salón comunal</h6>
+                    <br/>
+
                 </div>
             </section>
 
-            <br/>
-            <section className="section-pagetop bg">
-                <div className="container">
-                    <h3 className="title-page">Características del inmueble:</h3>
-                </div>
-            </section>
 
         </div>
     )
