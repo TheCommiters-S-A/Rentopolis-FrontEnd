@@ -73,9 +73,9 @@ export const LoginForm = props => {
         event.preventDefault();
     };
 
-    const handleSubmit = ( e ) => {
+    const handleSubmit = async ( e ) => {
         e.preventDefault();
-        auth.signin(values.user, values.password)
+        await auth.signin(values.user, values.password)
             .then( user =>
                 window.location.href = "/inicio"
             ).catch(error =>  {
