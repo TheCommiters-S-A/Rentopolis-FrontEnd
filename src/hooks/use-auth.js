@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from "../firebase-config";
+import { firebaseConfig } from "../firebase-config";
+import Swal from "sweetalert2";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -12,7 +13,9 @@ export function ProvideAuth({ children }) {
     return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
 
-export const useAuth = () => useContext(authContext);
+export const useAuth = () => {
+    return useContext(authContext);
+};
 
 function useProvideAuth() {
     const [user, setUser] = useState(null);
@@ -24,8 +27,9 @@ function useProvideAuth() {
             .then(response => {
                 setUser(response.user);
                 return response.user;
-            });
-    }
+            })
+
+    };
 
     const signup = (email, password) => {
         return firebase
@@ -46,6 +50,24 @@ function useProvideAuth() {
             });
     };
 
+    const sendPasswordResetEmail = email => {
+        return firebase
+            .auth()
+            .sendPasswordResetEmail(email)
+            .then(() => {
+                return true;
+            });
+    };
+
+    const confirmPasswordReset = (code, password) => {
+        return firebase
+            .auth()
+            .confirmPasswordReset(code, password)
+            .then(() => {
+                return true;
+            });
+    };
+
     useEffect(() => {
         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
             if (user) {
@@ -55,7 +77,6 @@ function useProvideAuth() {
             }
         });
 
-        // Cleanup subscription on unmount
         return () => unsubscribe();
     }, []);
 
@@ -64,5 +85,7 @@ function useProvideAuth() {
         signin,
         signup,
         signout,
+        sendPasswordResetEmail,
+        confirmPasswordReset
     };
 }
