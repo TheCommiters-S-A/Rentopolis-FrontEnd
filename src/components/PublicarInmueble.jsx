@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const PublicarInmueble = (props) => {
 
-    const classes = useStyles();
+    const classNamees = useStyles();
 
     const [tipoDeInmueble, setTipoDeInmueble] = React.useState('');
     const [imagen, setImagen] = React.useState('');
@@ -176,14 +176,14 @@ export const PublicarInmueble = (props) => {
                 <div className="container">
                     <div className="row">
                         <main className="col-md-12-new">
-                            <div class="container wow fadeInUp">
-                                <div class="col-lg-10 col-md-8">
-                                    <div class="form">
+                            <div className="container wow fadeInUp">
+                                <div className="col-lg-10 col-md-8">
+                                    <div className="form">
                                         <form onSubmit={handleSubmit}>
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> Tipo de
                                                     inmueble:</Typography>
-                                                <FormControl className={classes.formControl}>
+                                                <FormControl className={classNamees.formControl}>
                                                     <Select fullWidth required
                                                             labelId="demo-simple-select-label"
                                                             id="demo-simple-select"
@@ -208,7 +208,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> Descripción corta
                                                     de tu inmueble: </Typography>
-                                                <TextField required className={classes.formControl2}
+                                                <TextField required className={classNamees.formControl2}
                                                            label="Escribe algo característico de tu propiedad"
                                                            value={descripcion} onChange={handleChangeDescripcion}
                                                            variant="outlined"
@@ -231,7 +231,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> Valor de arriendo
                                                     (COP):</Typography>
-                                                <FormControl className={classes.formControl}>
+                                                <FormControl className={classNamees.formControl}>
                                                     <Input
                                                         id="standard-adornment-amount"
                                                         required
@@ -248,7 +248,7 @@ export const PublicarInmueble = (props) => {
                                                 <Typography align="left" variant="h5" component="h5"> Ubicado
                                                     en: </Typography>
 
-                                                <TextField required className={classes.formControl} id="ubicacion"
+                                                <TextField required className={classNamees.formControl} id="ubicacion"
                                                            label="Ciudad o municipio" required
                                                            value={ubicacion} onChange={handleChangeUbicacion}
                                                            variant="outlined"/>
@@ -257,7 +257,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> En la
                                                     dirección: </Typography>
-                                                <TextField required className={classes.formControl} id="direccion"
+                                                <TextField required className={classNamees.formControl} id="direccion"
                                                            placeholder="Ej: Cra 34 # 12-23"
                                                            value={direccion} onChange={handleChangeDireccion}
                                                            variant="outlined" required/>
@@ -266,7 +266,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5"
                                                             component="h5"> Barrio: </Typography>
-                                                <TextField required className={classes.formControl} id="barrio"
+                                                <TextField required className={classNamees.formControl} id="barrio"
                                                            placeholder="Ej: Chicó"
                                                            value={barrio} onChange={handleChangeBarrio}
                                                            variant="outlined" required/>
@@ -275,7 +275,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5"
                                                             component="h5"> Estrato: </Typography>
-                                                <FormControl className={classes.formControl3}>
+                                                <FormControl className={classNamees.formControl3}>
                                                     <Select
                                                         labelId="estrato"
                                                         id="estrato"
@@ -295,7 +295,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> Área construida
                                                     (m²):</Typography>
-                                                <FormControl className={classes.formControl3}>
+                                                <FormControl className={classNamees.formControl3}>
                                                     <Input
                                                         id="area"
                                                         required
@@ -311,7 +311,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5"
                                                             component="h5"> Habitaciones: </Typography>
-                                                <FormControl className={classes.formControl3}>
+                                                <FormControl className={classNamees.formControl3}>
                                                     <Select
                                                         labelId="numHabitaciones"
                                                         id="numHabitaciones"
@@ -331,7 +331,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5"
                                                             component="h5"> Baños: </Typography>
-                                                <FormControl className={classes.formControl3}>
+                                                <FormControl className={classNamees.formControl3}>
                                                     <Select
                                                         labelId="numBanos"
                                                         id="numBanos"
@@ -384,7 +384,7 @@ export const PublicarInmueble = (props) => {
                                                 </div>
                                             </div>
 
-                                            <div class="text-center">
+                                            <div className="text-center">
                                                 <Button style={{width: 300, height: 50}} type="submit"
                                                         variant="contained" color="primary">
                                                     <Typography align="left" variant="h6" component="h6"> Publicar
