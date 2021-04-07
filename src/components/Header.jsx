@@ -2,10 +2,22 @@ import {Buscar} from './Buscar'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Link from "@material-ui/core/Link";
-import {Grid} from "@material-ui/core";
 import React from "react";
+import { useState } from 'react';
+
 
 export const Header = (props) => {
+
+    let filters = props.filters;
+    
+    const [filtersState,setFilters] = useState(filters);
+
+    const handleFilterClick =(newName)=>{
+        filters.name = newName;
+        setFilters(filters);
+        props.filter(filtersState);
+    }
+
     return (
         <section className="header-main border-bottom">
             <div className="container">
@@ -16,7 +28,7 @@ export const Header = (props) => {
                         </a>
                         <img/>
                     </div>
-                    <Buscar></Buscar>
+                    <Buscar filter={handleFilterClick}></Buscar>
 
                     <div className="col-lg-2 ">
                         <Link align="center" href="/publicar">
