@@ -1,12 +1,13 @@
 import React from 'react';
 import {HeaderSimple} from "./HeaderSimple";
-import SimpleImageSlider from "react-simple-image-slider";
+
 import {makeStyles} from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import ClearIcon from '@material-ui/icons/Clear';
 import Typography from '@material-ui/core/Typography';
 import CheckIcon from '@material-ui/icons/Check';
+// import SimpleImageSlider from "react-simple-image-slider";
 
 const images = [
     {url: "assets/images/items/apto2.jpg"},
@@ -61,19 +62,20 @@ export const InmuebleEspecifico = (props) => {
                 <div className="container">
                     <div className="row">
                         <main className="col-md-12-new">
-                            <div class="container wow fadeInUp">
-                                <div class="col-lg-10 col-md-8">
-                                    <div class="form">
-                                        <SimpleImageSlider
-                                            width={896}
-                                            height={504}
-                                            images={images}
-                                            showBullets={true}
-                                            showNavs={true}
-                                            slideDuration={0.5}
-                                            navStyle={2}
-                                            useGPURender={true}
-                                        />
+                            <div className="container wow fadeInUp">
+                                <div className="col-lg-10 col-md-8">
+                                    <div className="form">
+                                        <img alt="inmueble" className="img-wrapp" src={images[2].url}/>
+                                        {/*<SimpleImageSlider*/}
+                                        {/*    width={896}*/}
+                                        {/*    height={504}*/}
+                                        {/*    images={images}*/}
+                                        {/*    showBullets={true}*/}
+                                        {/*    showNavs={true}*/}
+                                        {/*    slideDuration={0.5}*/}
+                                        {/*    navStyle={2}*/}
+                                        {/*    useGPURender={true}*/}
+                                        {/*/>*/}
                                     </div>
                                 </div>
                             </div>
