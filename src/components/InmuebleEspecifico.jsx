@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import ClearIcon from '@material-ui/icons/Clear';
 import Typography from '@material-ui/core/Typography';
 import CheckIcon from '@material-ui/icons/Check';
-// import SimpleImageSlider from "react-simple-image-slider";
+
 
 const images = [
     {url: "assets/images/items/apto2.jpg"},
