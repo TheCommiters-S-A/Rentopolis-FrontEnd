@@ -141,7 +141,6 @@ export const PublicarInmueble = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(property)
         axios.post("https://rentopolis.herokuapp.com/home/property/", property)
             .then(response => {
                 return response.data;
