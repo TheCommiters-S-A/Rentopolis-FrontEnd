@@ -22,8 +22,6 @@ export const Properties = (props) => {
                 setProperties(finalProperties)
                 props.amountProperties(finalProperties.length)
 
-                // let result = response.data;
-                // setProperties(result);
             }).catch(error => {
             Swal.fire({
                 icon: 'error',

@@ -10,6 +10,12 @@ test('Property', () => {
 
 });
 
+test('Property 2', () => {
+  render(<Property />);
+  expect(screen.getByAltText (/imagen/i)).toBeInTheDocument();
+
+});
+
 test('Properties', () => {
   render(<VistaPrincipal />);
   expect(screen.getByText(/inmuebles encontrados/i)).toBeInTheDocument();
