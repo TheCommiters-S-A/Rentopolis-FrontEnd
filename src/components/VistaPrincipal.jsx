@@ -15,31 +15,59 @@ export const VistaPrincipal = (props) => {
     let items = [{
         "name": "Apartamento en arriendo, SUBA, Bogotá D.C",
         "price": 3402200,
-        "area": "2",
+        "area": 60,
         "numBathrooms": 4,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto3.jpg"
+        "numBedrooms": 1,
+        "picture": "assets/images/items/apto3.jpg",
+        "garajes": 1,
+        "ascensor":true,
+        "infantil":true,
+        "vigilancia":true,
+        "gimnasio":false,
+        "comunal":true
     }, {
         "name": "Apartamento en arriendo, ENGATIVA, Bogotá D.C",
         "price": 1231223,
-        "area": "2",
+        "area": 100,
         "numBathrooms": 2,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto2.jpg"
+        "numBedrooms": 2,
+        "picture": "assets/images/items/apto2.jpg",
+        "garajes": 2,
+        "ascensor":false,
+        "infantil":true,
+        "vigilancia":false,
+        "gimnasio":true,
+        "comunal":true
     }, {
         "name": "Apartamento en arriendo, CHAPINERO, Bogotá D.C",
         "price": 3421000,
-        "area": "3",
+        "area": 600,
         "numBathrooms": 1,
         "numBedrooms": 3,
-        "picture": "assets/images/items/apto1.jpg"
+        "picture": "assets/images/items/apto1.jpg",
+        "garajes": 4,
+        "ascensor":false,
+        "infantil":false,
+        "vigilancia":true,
+        "gimnasio":true,
+        "comunal":false
     }
     ];
 
     let filters_values = {
-        "minPrecio": 0,
-        "maxPrecio": 0,
-        "name": ""
+        "minPrecio": Number.NaN,
+        "maxPrecio": Number.NaN,
+        "minArea": Number.NaN,
+        "maxArea": Number.NaN,
+        "name": "",
+        "habitaciones": Number.NaN,
+        "baths": Number.NaN,
+        "garajes": Number.NaN,
+        "ascensor": false,
+        "infantil":false,
+        "vigilancia":false,
+        "gimnasio":false,
+        "comunal":false
     }
 
     const [filtersState, setFiltersState] = React.useState(filters_values);

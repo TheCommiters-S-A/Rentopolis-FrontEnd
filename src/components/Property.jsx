@@ -8,30 +8,7 @@ import Select from '@material-ui/core/Select';
 
 export const Property = (props) => {
 
-
-    const items = [{
-        "name": "Apartamento en arriendo, SUBA, Bogotá D.C",
-        "price": 3402200,
-        "area": "2",
-        "numBathrooms": 4,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto3.jpg"
-    }, {
-        "name": "Apartamento en arriendo, ENGATIVA, Bogotá D.C",
-        "price": 1231223,
-        "area": "2",
-        "numBathrooms": 2,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto3.jpg"
-    },{
-        "name": "Apartamento en arriendo, CHAPINERO, Bogotá D.C",
-        "price": 3421000,
-        "area": "3",
-        "numBathrooms": 1,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto3.jpg"
-    }
-    ];
+    let items = props.items
 
     return (
         <div>
