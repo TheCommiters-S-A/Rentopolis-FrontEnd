@@ -31,31 +31,7 @@ export const Properties = (props) => {
                 text: error.message,
             })
         });
-    }, [properties]);
-
-    let items = [{
-        "name": "Apartamento en arriendo, SUBA, Bogotá D.C",
-        "price": 3402200,
-        "area": "2",
-        "numBathrooms": 4,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto3.jpg"
-    }, {
-        "name": "Apartamento en arriendo, ENGATIVA, Bogotá D.C",
-        "price": 1231223,
-        "area": "2",
-        "numBathrooms": 2,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto2.jpg"
-    }, {
-        "name": "Apartamento en arriendo, CHAPINERO, Bogotá D.C",
-        "price": 3421000,
-        "area": "3",
-        "numBathrooms": 1,
-        "numBedrooms": 3,
-        "picture": "assets/images/items/apto1.jpg"
-    }
-    ];
+    }, [properties]);// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
 

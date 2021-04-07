@@ -58,4 +58,3 @@ export const VistaPrincipal = (props) => {
         </div>
     )
 }
-

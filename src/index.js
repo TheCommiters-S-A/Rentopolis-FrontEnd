@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './defaultFiles/index.css';
+import './index.css';
 import App from './App';
-import reportWebVitals from './defaultFiles/reportWebVitals';
+import reportWebVitals from './reportWebVitals';
 import { FirebaseAppProvider } from 'reactfire';
 import firebaseConfig from './firebase-config';
 

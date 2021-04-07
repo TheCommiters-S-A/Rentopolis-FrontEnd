@@ -1,4 +1,4 @@
-import {Button, Grid, TextField, FormControl, InputLabel, Input, InputAdornment, IconButton} from '@material-ui/core';
+import {Button, Grid, FormControl, InputLabel, Input, InputAdornment, IconButton} from '@material-ui/core';
 import React, {useState} from 'react';
 import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
@@ -9,7 +9,7 @@ import {useFirebaseApp} from 'reactfire';
 import 'firebase/auth';
 import Swal from "sweetalert2";
 import Link from '@material-ui/core/Link';
-import Typography from "@material-ui/core/Typography";
+import * as UserAPI from './../api/UserAPI.js';
 
 
 const useStyle = makeStyles({
@@ -101,7 +101,10 @@ export const RegisterForm = props => {
                 })
                 console.log(error);
             });
+            UserAPI.postNewUser(null,values.name+" "+values.lastName,"1333333",values.email,values.password);
     }
+
+    
 
     return (
         <form autoComplete="off" onSubmit={signup}>
