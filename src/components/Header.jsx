@@ -26,7 +26,7 @@ export const Header = (props) => {
                         <a style={{fontSize: 30}} href="/inicio" className="brand-wrap">
                             Rentopolis
                         </a>
-                        <img/>
+                        
                     </div>
                     <Buscar filter={handleFilterClick}></Buscar>
 
@@ -40,7 +40,7 @@ export const Header = (props) => {
                         <div className="widgets-wrap float-md-right">
 
                             <div className="widget-header">
-                                <a href="#" class="icon icon-sm ">
+                                <a href="/#" className="icon icon-sm ">
                                     <AccountCircleIcon style={{fontSize: 40}}/>
                                 </a>
                             </div>

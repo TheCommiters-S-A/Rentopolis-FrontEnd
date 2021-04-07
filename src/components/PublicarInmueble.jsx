@@ -189,7 +189,6 @@ export const PublicarInmueble = (props) => {
                                                             id="demo-simple-select"
                                                             value={tipoDeInmueble}
                                                             onChange={handleChangeTipoDeInmueble}
-                                                            required
                                                     >
                                                         <MenuItem value={"Apartamento"}>Apartamento</MenuItem>
                                                         <MenuItem value={"Apartaestudio"}>Apartaestudio</MenuItem>
@@ -208,7 +207,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> Descripción corta
                                                     de tu inmueble: </Typography>
-                                                <TextField required className={classNamees.formControl2}
+                                                <TextField className={classNamees.formControl2}
                                                            label="Escribe algo característico de tu propiedad"
                                                            value={descripcion} onChange={handleChangeDescripcion}
                                                            variant="outlined"
@@ -248,7 +247,7 @@ export const PublicarInmueble = (props) => {
                                                 <Typography align="left" variant="h5" component="h5"> Ubicado
                                                     en: </Typography>
 
-                                                <TextField required className={classNamees.formControl} id="ubicacion"
+                                                <TextField className={classNamees.formControl} id="ubicacion"
                                                            label="Ciudad o municipio" required
                                                            value={ubicacion} onChange={handleChangeUbicacion}
                                                            variant="outlined"/>
@@ -257,7 +256,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5" component="h5"> En la
                                                     dirección: </Typography>
-                                                <TextField required className={classNamees.formControl} id="direccion"
+                                                <TextField className={classNamees.formControl} id="direccion"
                                                            placeholder="Ej: Cra 34 # 12-23"
                                                            value={direccion} onChange={handleChangeDireccion}
                                                            variant="outlined" required/>
@@ -266,7 +265,7 @@ export const PublicarInmueble = (props) => {
                                             <div className="form-group">
                                                 <Typography align="left" variant="h5"
                                                             component="h5"> Barrio: </Typography>
-                                                <TextField required className={classNamees.formControl} id="barrio"
+                                                <TextField className={classNamees.formControl} id="barrio"
                                                            placeholder="Ej: Chicó"
                                                            value={barrio} onChange={handleChangeBarrio}
                                                            variant="outlined" required/>
