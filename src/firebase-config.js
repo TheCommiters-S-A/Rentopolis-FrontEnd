@@ -1,3 +1,4 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
     apiKey: "AIzaSyCo6rxPoMrolEcfHZ4To-2bGQ4Wb8DYRYI",
     authDomain: "rentopoliseci.firebaseapp.com",

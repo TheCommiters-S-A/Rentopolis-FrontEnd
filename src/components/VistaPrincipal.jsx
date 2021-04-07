@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {Header} from './Header'
 import {Filter} from "./Filter";
 import {Properties} from "./Properties";
 import {Footer} from "./Footer";
 
-const  useForceUpdate=()=>{
-    const [count,setCount]=useState(0);
-    const increment =()=> setCount(prevCount => prevCount + 1);
-    return[increment,count];
+const useForceUpdate = () => {
+    const [count, setCount] = useState(0);
+    const increment = () => setCount(prevCount => prevCount + 1);
+    return [increment, count];
 }
 
 
@@ -43,22 +43,19 @@ export const VistaPrincipal = (props) => {
     }
 
     const [filtersState, setFiltersState] = React.useState(filters_values);
-    const [forceUpdate,forceUpdateValue]=useForceUpdate();
+    const [forceUpdate, forceUpdateValue] = useForceUpdate();
     const [generalFilter, setGeneralFilter] = React.useState('');
-    const [itemsState,setItems] = useState(items);
+    const [itemsState] = useState(items);
 
     const handleChangeGeneralFilter = (event) => {
         setGeneralFilter(event.target.value);
     };
 
-    const handleFilters=(New_filter)=>{
+    const handleFilters = (New_filter) => {
         setFiltersState(New_filter)
         forceUpdate()
         console.log(New_filter);
     }
-
-    
-    
 
 
     return (
