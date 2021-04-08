@@ -1,9 +1,4 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 
 
 export const Property = (props) => {
@@ -43,7 +38,7 @@ export const Property = (props) => {
                     </aside>
                     <div className="col-md-3">
                         <div className="info-main" align="center">
-                            <a href="#" className="h5 title"> {props.name} </a>
+                            <a href="/#" className="h5 title"> {props.name} </a>
                             {/*<a href="#" className="h5 title"> Apartamento en arriendo, SUBA, Bogotá D.C </a>*/}
                             <br/>
                             <p className="text-black-50">Precio de arriendo </p>
@@ -74,7 +69,7 @@ export const Property = (props) => {
                         <br/>
 
                         <p>
-                            <a href="#" className="btn btn-primary btn-block"> Contactar </a>
+                            <a href="/#" className="btn btn-primary btn-block"> Contactar </a>
                         </p>
                     </div>
                 </div>

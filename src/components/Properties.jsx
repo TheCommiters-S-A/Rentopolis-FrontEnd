@@ -9,17 +9,17 @@ export const Properties = (props) => {
     let items = props.items;
 
 
-    if(filters.minPrecio!=0){
+    if(filters.minPrecio!==0){
         console.log(filters,"---------------------")
         items = items.filter(item => filters.minPrecio<=item.price);
     }
 
-    if(filters.maxPrecio!=0){
+    if(filters.maxPrecio!==0){
         console.log(filters,"---------------------")
         items = items.filter(item => filters.maxPrecio<=item.price);
     }
 
-    if(filters.name!=""){
+    if(filters.name!==""){
         console.log(filters,"---------------------")
         items = items.filter(item => item.name.includes(filters.name));
     }

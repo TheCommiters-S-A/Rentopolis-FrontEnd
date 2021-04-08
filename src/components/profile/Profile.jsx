@@ -18,7 +18,6 @@ export const Profile = (props) => {
                         <a style={{fontSize: 30}} href="/inicio" className="brand-wrap">
                             Rentopolis
                         </a>
-                        <img/>
                     </div>
                    
                     <div className="col-lg-4 col-sm-6 col-12 last-item">
