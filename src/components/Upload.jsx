@@ -18,6 +18,8 @@ export const Upload = () => {
     const handleUpload=()=>{
         var formData = new FormData();
         formData.append('file',picturesState);
+        formData.append('id',null);
+        formData.append('title',picturesState.name);
         formData.append('filename',"title.jpg")
         console.log(formData)
 
@@ -33,8 +35,8 @@ export const Upload = () => {
         }
 
         const handleGetImage =()=>{
-            axios.get(apiaddr+"/home/picture/606d13056aa01031467a4b50").then((response)=>{
-                console.log(response.data.image.data);
+            axios.get(apiaddr+"/home/picture/\"2\"").then((response)=>{
+                console.log(response.data.image.name);
                 setImageState(response.data.image.data)
             })
         }
