@@ -1,76 +1,12 @@
-import {useEffect, useState } from 'react';
-import axios from 'axios';
+
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import './profile.css';
-import {useFirebaseApp} from 'reactfire';
+
 
 
 export const Profile = (props) => {
-    const firebase = useFirebaseApp();
-
-    const [passwd, setPsswd] = useState();
-
-    useEffect(() => {
-        console.log(localStorage.getItem('user'));
-        
-        axios.get("https://rentopolis.herokuapp.com/home/user/0")
-            .then(response => {
-                
-                let info= response.data;
-                document.getElementById("nombre").value = info.name;
-                document.getElementById("numero").value = info.phoneNumber;
-                document.getElementById("email").value = info.email;
-                setPsswd(info.passwd);
-            }).catch(error => {
-                alert("Fallo de Conexión ");
-            });
-    })
-
     
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if(document.getElementById("contraseña").value != document.getElementById("confirmarContraseña").value){
-            alert("Las contraseñas deben ser iguales");
-        }else{
-            if(document.getElementById("contraseña").value != ""){
-                axios.put('', {
-                    "name": document.getElementById("nombre").value,
-                    "phoneNumber": document.getElementById("numero").value,
-                    "email": document.getElementById("email").value,
-                    "passwd": document.getElementById("contraseña").value
-                }).then(function(response){
-                    console.log(response);
-                })
-                
-                firebase.auth().currentUser.updatePassword(document.getElementById("contraseña").value);
-            }else{
-                axios.put('', {
-                    "name": document.getElementById("nombre").value,
-                    "phoneNumber": document.getElementById("numero").value,
-                    "email": document.getElementById("email").value,
-                    "passwd": passwd
-                }).then(function(response){
-                    console.log(response);
-                })
-            }
-            firebase.auth().currentUser.updateEmail(document.getElementById("email").value);
-            localStorage.setItem('user',document.getElementById("email").value);
-            window.location.href = "/inicio";
-            
-        }
-        
-    }
-
-    const handleAblePassword = (event) => {
-        event.preventDefault();
-        if(document.getElementById("contraseña").value != "" ){
-            document.getElementById("confirmarContraseña").disabled=false;
-        }else{
-            document.getElementById("confirmarContraseña").disabled=true;
-        }
-    }
     
 
     return (
@@ -110,7 +46,7 @@ export const Profile = (props) => {
         </section>
         <section className="section-pagetop">
                 <div className="container">
-                    <form onSubmit={handleSubmit} >
+                    <form  >
                         <div className="form-row">
                             <div className="form-group col-md-4">
                                 <label htmlFor="nombre">Nombre:</label>
@@ -130,7 +66,7 @@ export const Profile = (props) => {
                         <div className="form-row margin-div">
                             <div className="form-group col-md-6">
                                 <label htmlFor="contraseña">Contraseña nueva:</label>
-                                <input type="text" className="form-control" id="contraseña" placeholder="Ingresa contraseña"  minLength="8" onChange={handleAblePassword}/>
+                                <input type="text" className="form-control" id="contraseña" placeholder="Ingresa contraseña"  minLength="8" />
                                 <small id="contraseñaHelp" className="form-text text-muted">Ingresa contraseña si y solo si deseas cambiarla. Longitud mínima de 8</small>
                             </div>
                             <div className="form-group col-md-6">
