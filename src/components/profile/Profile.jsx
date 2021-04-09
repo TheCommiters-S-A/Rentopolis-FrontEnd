@@ -3,12 +3,11 @@ import axios from 'axios';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import './profile.css';
-import {useFirebaseApp} from 'reactfire';
 import Swal from 'sweetalert2';
 
 
 export const Profile = (props) => {
-    const firebase = useFirebaseApp();
+    
 
     const [passwd, setPsswd] = useState();
 
@@ -50,7 +49,7 @@ export const Profile = (props) => {
                     console.log(response);
                 })
                 
-                firebase.auth().currentUser.updatePassword(document.getElementById("contraseña").value);
+                
             }else{
                 axios.put('https://rentopolis.herokuapp.com/home/0', {
                     "id":"0",
@@ -62,8 +61,7 @@ export const Profile = (props) => {
                     console.log(response);
                 })
             }
-            console.log(firebase.auth().currentUser);
-            //firebase.auth().currentUser.updateEmail(document.getElementById("email").value);
+            
             localStorage.setItem('user',document.getElementById("email").value);
             window.location.href = "/inicio";
             

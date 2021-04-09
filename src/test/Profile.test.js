@@ -4,7 +4,11 @@ import{Property} from "../components/Property";
 import{VistaPrincipal} from "../components/VistaPrincipal";
 import '@testing-library/jest-dom/extend-expect';
 
-
+test('Profile Simple', () => {
+  render(<Profile />);
+  const linkElement = screen.getByText(/Nombre/i);
+  expect(linkElement).toBeInTheDocument();
+});
 
 test('Property Simple', () => {
   render(<Property />);
