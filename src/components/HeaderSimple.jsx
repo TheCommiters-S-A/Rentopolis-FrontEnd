@@ -1,33 +1,25 @@
-
-import {Buscar} from './Buscar'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { useState } from 'react';
+import React from "react";
 
-export const Header = (props) => {
-
-    let filters = props.filters;
-    
-    const [filtersState,setFilters] = useState(filters);
-
-    const handleFilterClick =(newName)=>{
-        filters.name = newName;
-        setFilters(filters);
-        props.filter(filtersState);
-    }
-
+export const HeaderSimple = (props) => {
     return (
         <section className="header-main border-bottom">
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-lg-2 col-4">
+                    <div className="tituloo col-4">
                         <a style={{fontSize: 30}} href="/inicio" className="brand-wrap">
                             Rentopolis
                         </a>
                     </div>
-                    <Buscar filter={handleFilterClick}></Buscar>
+                    <div className="col-lg-4 col-sm-12">
+                    </div>
 
-                    <div className="col-lg-4 col-sm-6 col-12">
+                    <div className="col-lg-2 ">
+
+                    </div>
+
+                    <div className="col-lg-2 col-sm-6 col-12">
                         <div className="widgets-wrap float-md-right">
 
                             <div className="widget-header">

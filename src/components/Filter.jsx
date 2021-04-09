@@ -54,7 +54,7 @@ export const Filter = (props) => {
 
                 <article className="filter-group">
                     <header className="card-header">
-                        <a href="#" data-toggle="collapse" data-target="#collapse_1"
+                        <a href="/#" data-toggle="collapse" data-target="#collapse_1"
                            aria-expanded="true" className="">
                             <i className="icon-control fa fa-chevron-down"></i>
                             <h6 className="title">Ciudad, sector o barrio</h6>
@@ -78,7 +78,7 @@ export const Filter = (props) => {
 
                 <article className="filter-group">
                     <header className="card-header">
-                        <a href="#" data-toggle="collapse" data-target="#collapse_2"
+                        <a href="/#" data-toggle="collapse" data-target="#collapse_2"
                            aria-expanded="true" className="">
                             <i className="icon-control fa fa-chevron-down"></i>
                             <h6 className="title">Tipo de inmueble </h6>
@@ -143,7 +143,7 @@ export const Filter = (props) => {
 
                 <article className="filter-group">
                     <header className="card-header">
-                        <a href="#" data-toggle="collapse" data-target="#collapse_3"
+                        <a href="/#" data-toggle="collapse" data-target="#collapse_3"
                            aria-expanded="true" className="">
                             <i className="icon-control fa fa-chevron-down"></i>
                             <h6 className="title">Rango de precios </h6>
@@ -168,7 +168,7 @@ export const Filter = (props) => {
 
                 <article className="filter-group">
                     <header className="card-header">
-                        <a href="#" data-toggle="collapse" data-target="#collapse_7"
+                        <a href="/#" data-toggle="collapse" data-target="#collapse_7"
                            aria-expanded="true" className="">
                             <i className="icon-control fa fa-chevron-down"></i>
                             <h6 className="title">Área (m2)</h6>
@@ -227,7 +227,7 @@ export const Filter = (props) => {
 
                 <article className="filter-group">
                     <header className="card-header">
-                        <a href="#" data-toggle="collapse" data-target="#collapse_4"
+                        <a href="/#" data-toggle="collapse" data-target="#collapse_4"
                            aria-expanded="true" className="">
                             <i className="icon-control fa fa-chevron-down"></i>
                             <h6 className="title">Habitaciones </h6>
@@ -261,7 +261,7 @@ export const Filter = (props) => {
 
                 <article className="filter-group">
                     <header className="card-header">
-                        <a href="#" data-toggle="collapse" data-target="#collapse_5"
+                        <a href="/#" data-toggle="collapse" data-target="#collapse_5"
                            aria-expanded="true" className="">
                             <i className="icon-control fa fa-chevron-down"></i>
                             <h6 className="title">Baños </h6>
@@ -295,7 +295,7 @@ export const Filter = (props) => {
 
                 <article className="filter-group">
                     <header className="card-header">
-                        <a href="#" data-toggle="collapse" data-target="#collapse_6"
+                        <a href="/#" data-toggle="collapse" data-target="#collapse_6"
                            aria-expanded="true" className="">
                             <i className="icon-control fa fa-chevron-down"></i>
                             <h6 className="title">Garajes </h6>
@@ -331,7 +331,7 @@ export const Filter = (props) => {
 
             <article className="filter-group">
                 <header className="card-header">
-                    <a href="#" data-toggle="collapse" data-target="#collapse_8"
+                    <a href="/#" data-toggle="collapse" data-target="#collapse_8"
                        aria-expanded="true" className="">
                         <i className="icon-control fa fa-chevron-down"></i>
                         <h6 className="title">Lo quiero con: </h6>
