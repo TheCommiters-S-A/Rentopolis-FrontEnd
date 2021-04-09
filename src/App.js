@@ -7,10 +7,11 @@ function App() {
         <ProvideAuth>
             {
                 <div className="App">
-                    <Routes></Routes>
+                    <Routes/>
                 </div>
             }
         </ProvideAuth>
     );
 }
+
 export default App;

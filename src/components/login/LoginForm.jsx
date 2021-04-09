@@ -85,6 +85,7 @@ export const LoginForm = props => {
                 text: error.message,
             })
         });
+        return auth.user;
     }
 
     return (
@@ -96,6 +97,7 @@ export const LoginForm = props => {
                             id="user"
                             label="Correo"
                             size="medium"
+                            value={values.user}
                             onChange={handleChange('user')}
                             InputProps={{
                                 className: classes.textFields

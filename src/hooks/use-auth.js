@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext, createContext } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from "../firebase-config";
-import Swal from "sweetalert2";
 
 firebase.initializeApp(firebaseConfig);
 
