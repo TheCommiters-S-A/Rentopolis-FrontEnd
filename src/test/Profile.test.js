@@ -23,7 +23,7 @@ test('mocking axios request', async () => {
      title: 'mocked title'
   }]
   };
-  mockedAxios.get;
+  mockedAxios.put;
 });
 
 test('Profile Simple', () => {
