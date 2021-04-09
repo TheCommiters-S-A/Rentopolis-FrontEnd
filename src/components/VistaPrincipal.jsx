@@ -45,7 +45,7 @@ export const VistaPrincipal = (props) => {
     const [filtersState, setFiltersState] = React.useState(filters_values);
     const [forceUpdate,forceUpdateValue]=useForceUpdate();
     const [generalFilter, setGeneralFilter] = React.useState('');
-    const [itemsState,setItems] = useState(items);
+    const [itemsState] = useState(items);
 
     const handleChangeGeneralFilter = (event) => {
         setGeneralFilter(event.target.value);
