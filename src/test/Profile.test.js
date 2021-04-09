@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import {Profile} from "../components/profile/Profile";
 import{Property} from "../components/Property";
 import{VistaPrincipal} from "../components/VistaPrincipal";
+import {LoginForm} from "../components/login/LoginForm"
 import '@testing-library/jest-dom/extend-expect';
 
 test('Profile Simple', () => {
@@ -16,7 +17,12 @@ test('Property Simple', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('Vista', () => {
+test('Properties', () => {
   render(<VistaPrincipal />);
   expect(screen.getByText(/inmuebles encontrados/i)).toBeInTheDocument();
+});
+
+test('login', () => {
+  render(<LoginForm />);
+  expect(screen.getByText(/Contraseña/i)).toBeInTheDocument();
 });
