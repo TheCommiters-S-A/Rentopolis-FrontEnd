@@ -73,11 +73,12 @@ export const LoginForm = props => {
     };
 
     const firebase = useFirebaseApp();
-
+    
     const signin = async (e) => {
         e.preventDefault();
         await firebase.auth().signInWithEmailAndPassword(values.user, values.password)
             .then(user => {
+                localStorage.setItem('user', firebase.auth().currentUser.email);
                 window.location.href = "/inicio";
             })
             .catch(error => {

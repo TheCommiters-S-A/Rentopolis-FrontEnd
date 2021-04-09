@@ -1,0 +1,15 @@
+.last-item {
+    margin-left: auto;
+}
+
+.margin-div{
+    margin-top: 50px;
+}
+
+.center-div{
+    justify-content: space-evenly;
+}
+
+.boton-estilo{
+    width: 200px;
+}
