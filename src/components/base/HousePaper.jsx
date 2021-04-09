@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core';
-import React, {useState} from 'react';
+import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import House from '../../views/Login/casa.svg';
 import Icon from '../../views/Login/icon.svg';

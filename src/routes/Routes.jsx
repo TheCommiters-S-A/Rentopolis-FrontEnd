@@ -4,7 +4,7 @@ import {Bienvenida} from '../components/Bienvenida';
 import { Login } from '../components/login/Login';
 import { Register } from '../components/register/Register';
 import {FeedPage} from "../pages/FeedPage/FeedPage";
-
+import {InmuebleEspecifico} from '../components/InmuebleEspecifico';
 
 const Routes = () => {
 
@@ -15,6 +15,7 @@ const Routes = () => {
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/registro" component={Register}/>
                 <Route exact path="/inicio" render={FeedPage}/>
+                <Route exact path="/inmueble" component={ InmuebleEspecifico }/>
             </Switch>
         </BrowserRouter>
     );

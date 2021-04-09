@@ -1,4 +1,4 @@
-import {Button, Grid, TextField, FormControl, InputLabel, Input, InputAdornment, IconButton} from '@material-ui/core';
+import {Button, Grid, FormControl, InputLabel, Input, InputAdornment, IconButton} from '@material-ui/core';
 import React, {useState} from 'react';
 import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/styles';
@@ -8,7 +8,6 @@ import 'fontsource-roboto';
 import { useAuth } from "../../hooks/use-auth";
 import Swal from "sweetalert2";
 import Link from '@material-ui/core/Link';
-import Typography from "@material-ui/core/Typography";
 import * as UserAPI from './../api/UserAPI.js';
 
 
