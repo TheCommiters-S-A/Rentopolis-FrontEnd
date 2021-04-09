@@ -211,10 +211,10 @@ export const Filter = (props) => {
                                         >
                                             <MenuItem value={10}>60 m2</MenuItem>
                                             <MenuItem value={20}>100 m2</MenuItem>
-                                            <MenuItem value={30}>200 m2</MenuItem>
-                                            <MenuItem value={10}>300 m2</MenuItem>
                                             <MenuItem value={20}>400 m2</MenuItem>
                                             <MenuItem value={30}>500 m2</MenuItem>
+                                            <MenuItem value={30}>200 m2</MenuItem>
+                                            <MenuItem value={10}>300 m2</MenuItem>                                           
                                             <MenuItem value={10}>1200 m2 +</MenuItem>
                                         </Select>
                                     </FormControl>
@@ -279,16 +279,17 @@ export const Filter = (props) => {
                             </label>
                             <label className="checkbox-btn">
                                 <input type="checkbox"/>
-                                <span className="btn btn-light"> 3 </span>
-                            </label>
-                            <label className="checkbox-btn">
-                                <input type="checkbox"/>
                                 <span className="btn btn-light"> 4 </span>
                             </label>
                             <label className="checkbox-btn">
                                 <input type="checkbox"/>
                                 <span className="btn btn-light"> 5+ </span>
                             </label>
+                            <label className="checkbox-btn">
+                                <input type="checkbox"/>
+                                <span className="btn btn-light"> 3 </span>
+                            </label>
+                            
                         </div>
                     </div>
                 </article>
@@ -309,16 +310,17 @@ export const Filter = (props) => {
                             </label>
                             <label className="checkbox-btn">
                                 <input type="checkbox"/>
-                                <span className="btn btn-light"> 2 </span>
-                            </label>
-                            <label className="checkbox-btn">
-                                <input type="checkbox"/>
                                 <span className="btn btn-light"> 3 </span>
                             </label>
                             <label className="checkbox-btn">
                                 <input type="checkbox"/>
                                 <span className="btn btn-light"> 4 </span>
                             </label>
+                            <label className="checkbox-btn">
+                                <input type="checkbox"/>
+                                <span className="btn btn-light"> 2 </span>
+                            </label>
+                           
                             <label className="checkbox-btn">
                                 <input type="checkbox"/>
                                 <span className="btn btn-light"> 5+ </span>
