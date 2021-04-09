@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import {Profile} from "../components/profile/Profile";
 import{Property} from "../components/Property";
 import{VistaPrincipal} from "../components/VistaPrincipal";
-import {LoginForm} from "../components/login/LoginForm"
 import '@testing-library/jest-dom/extend-expect';
 
 test('Profile Simple', () => {
