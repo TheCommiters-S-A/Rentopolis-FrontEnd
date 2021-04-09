@@ -24,7 +24,6 @@ export const Header = (props) => {
                         <a style={{fontSize: 30}} href="/inicio" className="brand-wrap">
                             Rentopolis
                         </a>
-                        <img/>
                     </div>
                     <Buscar filter={handleFilterClick}></Buscar>
 
