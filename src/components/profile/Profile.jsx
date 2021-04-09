@@ -32,14 +32,14 @@ export const Profile = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(document.getElementById("contraseña").value != document.getElementById("confirmarContraseña").value){
+        if(document.getElementById("contraseña").value !== document.getElementById("confirmarContraseña").value){
             Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Las contraseñas deben ser iguales',
                 })
         }else{
-            if(document.getElementById("contraseña").value != ""){
+            if(document.getElementById("contraseña").value !== ""){
                 axios.put('https://rentopolis.herokuapp.com/home/0', {
                     "id": "0",
                     "name": document.getElementById("nombre").value,
@@ -73,7 +73,7 @@ export const Profile = (props) => {
 
     const handleAblePassword = (event) => {
         event.preventDefault();
-        if(document.getElementById("contraseña").value != "" ){
+        if(document.getElementById("contraseña").value !== "" ){
             document.getElementById("confirmarContraseña").disabled=false;
             
         }else{
