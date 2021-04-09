@@ -9,6 +9,7 @@ export const Property = (props) => {
     let price = formatter.format(props.price);
     let formatPrice = price.substring(0, price.length - 3);
 
+
     return (
         <div>
             <article className="card card-product-list">
