@@ -68,9 +68,9 @@ function useProvideAuth() {
     };
 
     useEffect(() => {
-        const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                setUser(user);
+        const unsubscribe = firebase.auth().onAuthStateChanged(userObserver => {
+            if (userObserver) {
+                setUser(userObserver);
             } else {
                 setUser(false);
             }
