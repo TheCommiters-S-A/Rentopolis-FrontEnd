@@ -1,30 +1,8 @@
-import { render, screen,cleanup } from '@testing-library/react';
+import { render, screen, fireEvent  } from '@testing-library/react';
 import {Profile} from "../components/profile/Profile";
 import{Property} from "../components/Property";
 import{VistaPrincipal} from "../components/VistaPrincipal";
 import '@testing-library/jest-dom/extend-expect';
-import mockedAxios from 'axios';
-
-
-afterEach(cleanup);
-test('mocking axios request', async () => {
-  const data = {
-  data: [
-   {
-     id: 1,
-     title: 'title 1'
-   },
-   {
-     id: 2,
-     title: 'title 2'
-   },
-   {
-     id: 3,
-     title: 'mocked title'
-  }]
-  };
-  mockedAxios.put;
-});
 
 test('Profile Simple', () => {
   render(<Profile />);
@@ -41,4 +19,19 @@ test('Property Simple', () => {
 test('Properties', () => {
   render(<VistaPrincipal />);
   expect(screen.getByText(/inmuebles encontrados/i)).toBeInTheDocument();
+});
+
+it('should call onChange prop with input value', () => {
+  const { container, getByLabelText } = render(<Profile />);
+  const searchInput = getByLabelText(/Contraseña nueva/i);
+  const query = 'nirvana';
+
+  const mockChange = jest.fn()
+  searchInput.onChange = mockChange;
+  fireEvent.change(searchInput, { target: { value: 'doe' } });
+  expect(searchInput.value).toEqual('doe');
+  fireEvent.change(searchInput, { target: { value: query } });
+  fireEvent.change(searchInput, { target: { value: 'doe' } });
+  fireEvent.change(searchInput, { target: { value: query } });
+  
 });

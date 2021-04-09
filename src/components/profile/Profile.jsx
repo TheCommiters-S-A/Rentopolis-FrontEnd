@@ -141,7 +141,7 @@ export const Profile = (props) => {
                                 <small id="contraseñaHelp" className="form-text text-muted">Ingresa contraseña si y solo si deseas cambiarla. Longitud mínima de 8</small>
                             </div>
                             <div className="form-group col-md-6">
-                                <label htmlFor="confirmarContraseña">Confirmar contraseña nueva:</label>
+                                <label htmlFor="confirmarContraseña">Confirmar contraseña:</label>
                                 <input type="text" className="form-control" id="confirmarContraseña" placeholder="Ingresa contraseña" disabled/>
                             </div>
                         </div>
