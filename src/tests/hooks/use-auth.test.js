@@ -1,5 +1,11 @@
 import {renderHook, act} from "@testing-library/react-hooks";
 import {ProvideAuth, useAuth} from "../../hooks/use-auth";
+import {Header} from "../../components/Header";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import {configure, shallow} from "enzyme";
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
+
+configure({ adapter: new Adapter() });
 
 describe('Test case for use-auth hook', () => {
 
@@ -41,6 +47,16 @@ describe('Test case for use-auth hook', () => {
             result.current
         })
         expect(result.current.user).toBeFalsy()
+    })
+
+    test('Should have ExitToApp', () =>{
+        const wrapper = shallow(<Header/>)
+        expect(wrapper.find(ExitToAppIcon).exists()).toBeTruthy()
+    })
+
+    test('Should have onClick prop', () =>{
+        const wrapper = shallow(<Header/>)
+        expect(wrapper.find(ExitToAppIcon).prop('onClick')).toBeDefined()
     })
 
 })
