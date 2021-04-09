@@ -5,10 +5,9 @@ import {ThemeProvider} from '@material-ui/styles';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import 'fontsource-roboto';
-import {useFirebaseApp} from 'reactfire';
-import 'firebase/auth';
-import Swal from 'sweetalert2'
 import Link from "@material-ui/core/Link";
+import { useAuth } from "../../hooks/use-auth";
+import Swal from "sweetalert2";
 
 const useStyle = makeStyles({
     textFields: {
@@ -52,6 +51,8 @@ const theme = createMuiTheme({
 
 export const LoginForm = props => {
 
+    const auth =  useAuth();
+
     const classes = useStyle();
 
     const [values, setValues] = useState({
@@ -72,27 +73,23 @@ export const LoginForm = props => {
         event.preventDefault();
     };
 
-    const firebase = useFirebaseApp();
-
-    const signin = async (e) => {
+    const handleSubmit = async ( e ) => {
         e.preventDefault();
-        await firebase.auth().signInWithEmailAndPassword(values.user, values.password)
-            .then(user => {
-                window.location.href = "/inicio";
+        await auth.signin(values.user, values.password)
+            .then( user =>
+                window.location.href = "/inicio"
+            ).catch(error =>  {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.message,
             })
-            .catch(error => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: error.message,
-                })
-                console.log(error, values.user, values.password)
-            });
-
+        });
+        return auth.user;
     }
 
     return (
-        <form autoComplete="off" onSubmit={signin}>
+        <form autoComplete="off" onSubmit={ handleSubmit }>
             <ThemeProvider theme={theme}>
                 <Grid container direction="column" justify="space-around" alignItems="center" spacing={4}>
                     <Grid item xs={9}>
@@ -100,6 +97,7 @@ export const LoginForm = props => {
                             id="user"
                             label="Correo"
                             size="medium"
+                            value={values.user}
                             onChange={handleChange('user')}
                             InputProps={{
                                 className: classes.textFields

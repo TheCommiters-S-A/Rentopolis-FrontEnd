@@ -3,8 +3,11 @@ import {Buscar} from './Buscar'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { useState } from 'react';
+import { useAuth } from "../hooks/use-auth";
 
 export const Header = (props) => {
+
+    const auth = useAuth();
 
     let filters = props.filters;
     
@@ -37,7 +40,7 @@ export const Header = (props) => {
                             </div>
                             <div className="widget-header  mr-3">
                                 <a href="/" className="icon icon-sm ">
-                                    <ExitToAppIcon style={{fontSize: 40}}/>
+                                    <ExitToAppIcon style={{fontSize: 40}} onClick={ ( ) => auth.signout() }/>
                                 </a>
                             </div>
                         </div>

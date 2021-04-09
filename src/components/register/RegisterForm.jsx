@@ -5,8 +5,7 @@ import {ThemeProvider} from '@material-ui/styles';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import 'fontsource-roboto';
-import {useFirebaseApp} from 'reactfire';
-import 'firebase/auth';
+import { useAuth } from "../../hooks/use-auth";
 import Swal from "sweetalert2";
 import Link from '@material-ui/core/Link';
 import * as UserAPI from './../api/UserAPI.js';
@@ -59,6 +58,8 @@ const theme = createMuiTheme({
 
 export const RegisterForm = props => {
 
+    const auth = useAuth();
+
     const classes = useStyle();
 
     const [values, setValues] = useState({
@@ -81,17 +82,17 @@ export const RegisterForm = props => {
         event.preventDefault();
     };
 
-    const firebase = useFirebaseApp();
 
-    const signup = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        await firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
+        await auth().signup(values.email, values.password)
             .then((response) => {
                 Swal.fire(
                     'Registro exitoso',
                     `¡Bienvenido@ a Rentópolis, ${values.name} ${values.lastName}!`,
                     'success'
-                )
+                );
+                window.location.href = "/inicio";
             })
             .catch(error => {
                 Swal.fire({
@@ -107,7 +108,7 @@ export const RegisterForm = props => {
     
 
     return (
-        <form autoComplete="off" onSubmit={signup}>
+        <form autoComplete="off" onSubmit={handleSubmit}>
             <ThemeProvider theme={theme}>
                 <Grid container alignItems="center" justify="center" spacing={2}>
                     <Grid item xs={10} sm={2}>
