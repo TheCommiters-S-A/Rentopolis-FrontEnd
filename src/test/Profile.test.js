@@ -21,8 +21,3 @@ test('Properties', () => {
   render(<VistaPrincipal />);
   expect(screen.getByText(/inmuebles encontrados/i)).toBeInTheDocument();
 });
-
-test('login', () => {
-  render(<LoginForm />);
-  expect(screen.getByText(/Contraseña/i)).toBeInTheDocument();
-});
