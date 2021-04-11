@@ -23,6 +23,19 @@ export const Filter = (props) => {
 
     const [filterState, setFilterState] = React.useState(filters);
 
+
+    const handletypeChange=(e)=>{
+        e.preventDefault();
+        if(filterState.type===""){
+            filterState.type=e.target.value;
+        }else{
+            filterState.type="";
+        }
+        setFilterState(filterState);
+        props.filter(filterState);
+    }
+
+
     const handleChangeAreaMinima = (e) => {
         e.preventDefault();
         filterState.minArea = parseInt(e.target.value);
@@ -158,54 +171,54 @@ export const Filter = (props) => {
                     <div className="filter-content collapse show" id="collapse_2">
                         <div className="card-body">
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Apartamento"/>
                                 <div className="custom-control-label">Apartamentos
                                     <b className="badge badge-pill badge-light float-right">120</b>
                                 </div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
-                                <div className="custom-control-label">Apartaestudios
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Apartaestudio"/>
+                                <div className="custom-control-label" >Apartaestudios
                                     <b className="badge badge-pill badge-light float-right">15</b></div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Casa"/>
                                 <div className="custom-control-label">Casas
                                     <b className="badge badge-pill badge-light float-right">35</b></div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Oficina"/>
                                 <div className="custom-control-label">Oficinas
                                     <b className="badge badge-pill badge-light float-right">89</b></div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
-                                <div className="custom-control-label">Locales
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Local"/>
+                                <div className="custom-control-label" >Locales
                                     <b className="badge badge-pill badge-light float-right">30</b></div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Bodega"/>
                                 <div className="custom-control-label">Bodegas
                                     <b className="badge badge-pill badge-light float-right">30</b></div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
-                                <div className="custom-control-label">Lotes
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Lote"/>
+                                <div className="custom-control-label" >Lotes
                                     <b className="badge badge-pill badge-light float-right">30</b></div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Finca"/>
                                 <div className="custom-control-label">Fincas
                                     <b className="badge badge-pill badge-light float-right">30</b></div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Edificio"/>
                                 <div className="custom-control-label">Edificio de oficinas
                                     <b className="badge badge-pill badge-light float-right">30</b></div>
                             </label>
                             <label className="custom-control custom-checkbox">
-                                <input type="checkbox" className="custom-control-input"/>
-                                <div className="custom-control-label">Consultorios
+                                <input type="checkbox" className="custom-control-input" onChange={handletypeChange} value="Consultorio"/>
+                                <div className="custom-control-label" >Consultorios
                                     <b className="badge badge-pill badge-light float-right">30</b></div>
                             </label>
                         </div>

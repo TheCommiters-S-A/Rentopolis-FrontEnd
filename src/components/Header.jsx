@@ -11,9 +11,8 @@ export const Header = (props) => {
     const [filtersState,setFilters] = useState(filters);
 
     const handleFilterClick =(newName)=>{
-        filters.name = newName;
+        filtersState.name = newName;
         setFilters(filters);
-        props.filter(filtersState);
     }
 
     return (

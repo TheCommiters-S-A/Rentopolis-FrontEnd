@@ -1,8 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Header} from './Header'
 import {Filter} from "./Filter";
 import {Properties} from "./Properties";
 import {Footer} from "./Footer";
+import * as PropertyAPI from './api/PropertyAPI.js';
+import axios from 'axios';
+import Swal from "sweetalert2";
+
+const apiaddrH = 'https://rentopolis.herokuapp.com'
+
 
 const useForceUpdate=()=>{
     const [count,setCount]=useState(0);
@@ -12,13 +18,13 @@ const useForceUpdate=()=>{
 
 export const VistaPrincipal = (props) => {
 
-
     let filters_values = {
         "minPrecio": Number.NaN,
         "maxPrecio": Number.NaN,
         "minArea": Number.NaN,
         "maxArea": Number.NaN,
         "name": "",
+        "type": "",
         "habitaciones": Number.NaN,
         "baths": Number.NaN,
         "garajes": Number.NaN,
@@ -29,6 +35,8 @@ export const VistaPrincipal = (props) => {
         "comunal":false
     }
 
+    const [propertiesState, setProperties] = useState([]);
+
     const [filtersState,setFiltersState]=useState(filters_values);
     const [forceUpdate,forceUpdateValue]=useForceUpdate();
     const [numeroDeInmuebles, setNumeroDeInmuebles] = useState(0);
@@ -36,14 +44,44 @@ export const VistaPrincipal = (props) => {
         setNumeroDeInmuebles(numero);
     };
 
+    useEffect(() => {
+        let properties=[];
+    axios.get(apiaddrH + "/home/properties")
+        .then(response => {
+            var APIResponse = response.data;
+            properties = [...properties]
+            if (APIResponse.length !== properties.length) {
+                properties = APIResponse
+                console.log(properties,"Api call");
+                setProperties(response.data)
+            }
+
+        }).catch(error => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error.message,
+        })
+    });
+    },[]);
+
+    
+    console.log(propertiesState)
+
     const handleFilter =(new_filter)=>{
         setFiltersState(new_filter);
         forceUpdate();
     }
+    const handleLoad =()=>{
+        setProperties(PropertyAPI.getProperties());
+    }
 
+
+    
     return (
-        <div className="App">
-            <Header></Header>
+        <div className="App" >
+            {handleLoad}
+            <Header filters={filtersState}></Header>
 
             <section className="section-pagetop bg">
                 <div className="container">
@@ -62,7 +100,7 @@ export const VistaPrincipal = (props) => {
 
                                 </div>
                             </header>
-                            <Properties amountProperties={handleChangeNumeroDeInmuebles} filter={filtersState} key={forceUpdateValue}/>
+                            <Properties amountProperties={handleChangeNumeroDeInmuebles} filter={filtersState} key={forceUpdateValue} properties={propertiesState}/>
                         </main>
                     </div>
                 </div>
