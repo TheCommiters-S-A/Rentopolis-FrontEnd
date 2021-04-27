@@ -19,7 +19,8 @@ export const Property = (props) => {
                     </aside>
                     <div className="col-md-3">
                         <div className="info-main" align="center">
-                            <a href="/#" className="h5 title"> {props.name} </a>
+                            <a href="/inmueble" className="h5 title"> {props.name} </a>
+
                             {/*<a href="#" className="h5 title"> Apartamento en arriendo, SUBA, Bogotá D.C </a>*/}
                             <br/>
                             <p className="text-black-50">Precio de arriendo </p>

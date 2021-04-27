@@ -7,6 +7,7 @@ import {Footer} from "./Footer";
 
 export const VistaPrincipal = (props) => {
 
+
     const [numeroDeInmuebles, setNumeroDeInmuebles] = useState(0);
     const handleChangeNumeroDeInmuebles = (numero) => {
         setNumeroDeInmuebles(numero);
@@ -16,7 +17,8 @@ export const VistaPrincipal = (props) => {
 
     const handleChangeGeneralFilter = (event) => {
         setGeneralFilter(event.target.value);
-    };
+    }
+
 
     return (
         <div className="App">
@@ -36,6 +38,7 @@ export const VistaPrincipal = (props) => {
                             <header className="border-bottom mb-4 pb-3">
                                 <div className="form-inline">
                                     <span className="mr-md-auto">{numeroDeInmuebles} inmuebles encontrados </span>
+
                                     <select className="mr-2 form-control"
                                             value={generalFilter}
                                             onChange={handleChangeGeneralFilter}>
