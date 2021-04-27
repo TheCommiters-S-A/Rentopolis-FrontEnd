@@ -19,6 +19,14 @@ a:hover {
   text-align: center;
   display: block;
 }
+
+.img-wrapp {
+  text-align: center;
+  display: block;
+  width: 896px;
+  height: 504px;
+}
+
 .img-wrap img {
   max-width: 100%;
 }

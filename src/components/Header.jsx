@@ -9,7 +9,7 @@ import { useState } from 'react';
 export const Header = (props) => {
 
     let filters = props.filters;
-    
+
     const [filtersState,setFilters] = useState(filters);
 
     const handleFilterClick =(newName)=>{
@@ -26,7 +26,7 @@ export const Header = (props) => {
                         <a style={{fontSize: 30}} href="/inicio" className="brand-wrap">
                             Rentopolis
                         </a>
-                        
+
                     </div>
                     <Buscar filter={handleFilterClick}></Buscar>
 

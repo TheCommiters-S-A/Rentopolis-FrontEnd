@@ -5,6 +5,7 @@ import {PublicarInmueble} from '../components/PublicarInmueble';
 import {Bienvenida} from '../components/Bienvenida';
 import { Login } from '../components/login/Login';
 import { Register } from '../components/register/Register';
+import {InmuebleEspecifico} from '../components/InmuebleEspecifico';
 
 class Routes extends React.Component {
     render() {
@@ -16,6 +17,8 @@ class Routes extends React.Component {
                     <Route exact path="/login" component={ Login }/>
                     <Route exact path="/registro" component={ Register }/>
                     <Route exact path="/publicar" component={ PublicarInmueble }/>
+                    <Route exact path="/inmueble" component={ InmuebleEspecifico }/>
+
                 </Switch>
             </BrowserRouter>
         );
