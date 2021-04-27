@@ -19,6 +19,14 @@ a:hover {
   text-align: center;
   display: block;
 }
+
+.img-wrapp {
+  text-align: center;
+  display: block;
+  width: 896px;
+  height: 504px;
+}
+
 .img-wrap img {
   max-width: 100%;
 }
@@ -158,6 +166,11 @@ a:hover {
 /* ============== spacing ============== */
 .padding-y {
   padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.padding-y2 {
+  padding-top: 0px;
   padding-bottom: 20px;
 }
 
@@ -920,7 +933,7 @@ a[class*=card]:hover .title {
 }
 .card-product-list .img-wrap {
   height: 380px;
-  width: 465.33px;
+  width: 523.5px;
   border-radius: 0.37rem 0 0 0.37rem;
 }
 .card-product-list .info-main {
