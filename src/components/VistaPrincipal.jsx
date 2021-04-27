@@ -5,19 +5,38 @@ import {Properties} from "./Properties";
 import {Footer} from "./Footer";
 
 
+const useForceUpdate = () => {
+    const [count, setCount] = useState(0);
+    const increment = () => setCount(prevCount => prevCount + 1);
+    return [increment, count];
+}
+
+
 export const VistaPrincipal = (props) => {
 
-
     const [numeroDeInmuebles, setNumeroDeInmuebles] = useState(0);
+
     const handleChangeNumeroDeInmuebles = (numero) => {
         setNumeroDeInmuebles(numero);
     };
 
+    let filters_values = {
+        "minPrecio": 0,
+        "maxPrecio": 0,
+        "name": ""
+    }
+
+    // eslint-disable-next-line
+    const [filtersState, setFiltersState] = React.useState(filters_values);
+    // eslint-disable-next-line
+    const [forceUpdate, forceUpdateValue] = useForceUpdate();
     const [generalFilter, setGeneralFilter] = React.useState('');
+
 
     const handleChangeGeneralFilter = (event) => {
         setGeneralFilter(event.target.value);
     }
+
 
 
     return (
@@ -50,7 +69,12 @@ export const VistaPrincipal = (props) => {
 
                                 </div>
                             </header>
+
+                            <Properties filters={filtersState}  key={forceUpdateValue}/>
+
+
                             <Properties amountProperties={handleChangeNumeroDeInmuebles}/>
+
                         </main>
                     </div>
                 </div>

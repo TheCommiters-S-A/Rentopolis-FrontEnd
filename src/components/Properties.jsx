@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Property} from './Property';
-import Swal from "sweetalert2";
+
 
 
 export const Properties = (props) => {
@@ -23,11 +23,7 @@ export const Properties = (props) => {
                 props.amountProperties(finalProperties.length)
 
             }).catch(error => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: error.message,
-            })
+
         });
     }, [properties]);// eslint-disable-line react-hooks/exhaustive-deps
 

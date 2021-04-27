@@ -164,7 +164,6 @@ export const Filter = (props) => {
                 <article className="filter-group">
                     <header className="card-header">
                         <a href="/#" data-toggle="collapse" data-target="#collapse_7"
-
                            aria-expanded="true">
 
                             <i className="icon-control fa fa-chevron-down"></i>
