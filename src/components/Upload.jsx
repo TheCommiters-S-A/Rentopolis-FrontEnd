@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import ImageUploader from 'react-images-upload';
 
 
 export const Upload = () => {
@@ -57,7 +56,7 @@ export const Upload = () => {
         <button onClick={handleUpload} >Subir</button>
 
         <button onClick={handleGetImage} >descargar</button>
-    <img src={'data:image/jpeg;base64,'+imageState} alt="image"></img>
+    <img src={'data:image/jpeg;base64,'+imageState} alt="i"></img>
 
         </div>
     )
