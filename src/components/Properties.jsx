@@ -1,44 +1,48 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import {Property} from './Property';
+
 
 
 export const Properties = (props) => {
 
-    const filters = props.filters;
-
-    let items = props.items;
 
 
-    if(filters.minPrecio!=0){
-        console.log(filters,"---------------------")
-        items = items.filter(item => filters.minPrecio<=item.price);
-    }
+    const [properties, setProperties] = useState([]);
 
-    if(filters.maxPrecio!=0){
-        console.log(filters,"---------------------")
-        items = items.filter(item => filters.maxPrecio<=item.price);
-    }
+    useEffect(() => {
+        axios.get("https://rentopolis.herokuapp.com/home/properties")
+            .then(response => {
+                var APIResponse = response.data;
+                let finalProperties = [...properties]
+                if (APIResponse.length !== properties.length) {
+                    finalProperties = APIResponse
 
-    if(filters.name!=""){
-        console.log(filters,"---------------------")
-        items = items.filter(item => item.name.includes(filters.name));
-    }
+                }
+                setProperties(finalProperties)
+                props.amountProperties(finalProperties.length)
+
+            }).catch(error => {
+
+        });
+    }, [properties]);// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
+
         <div>
 
-            {items.map((item, i) => {
+            {properties.map((item, i) => {
                 return (<Property key={i}
-                                  name={item.name}
+                                  name={item.description}
                                   price={item.price}
                                   area={item.area}
-                                  numBathrooms={item.numBathrooms}
-                                  numBedrooms={item.numBedrooms}
+                                  numBathrooms={item.numberOfBathRooms}
+                                  numBedrooms={item.numberOfRooms}
                                   picture={item.picture}
                     />
                 );
             })}
 
         </div>
-    );
+    )
 }

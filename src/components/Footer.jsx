@@ -1,9 +1,7 @@
 import React from 'react';
-import {Property} from './Property';
 
 
 export const Footer = (props) => {
-
 
     return (
         <footer className="section-footer border-top padding-y">

@@ -5,7 +5,7 @@ import ImageUploader from 'react-images-upload';
 
 export const Upload = () => {
 
-    const apiaddr = "http://localhost:8080/"
+    const apiaddr = "https://rentopolis.herokuapp.com/"
     const [picturesState,setPicturesState] = useState("");
     const [imageState,setImageState] = useState("");
     var FormData = require('form-data');
