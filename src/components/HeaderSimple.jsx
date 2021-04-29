@@ -12,7 +12,10 @@ export const HeaderSimple = (props) => {
                             Rentopolis
                         </a>
                     </div>
-                    <div className="col-lg-4 col-sm-12">
+
+                    <div className="col-lg-6 col-sm-12">
+
+
                     </div>
 
                     <div className="col-lg-2 ">

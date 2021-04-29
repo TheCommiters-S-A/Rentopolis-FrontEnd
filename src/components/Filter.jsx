@@ -253,9 +253,10 @@ export const Filter = (props) => {
                 <article className="filter-group">
                     <header className="card-header">
                         <a href="/#" data-toggle="collapse" data-target="#collapse_7"
-                           aria-expanded="true" className="">
+                           aria-expanded="true">
+
                             <i className="icon-control fa fa-chevron-down"></i>
-                            <h6 className="title">Área (m2)</h6>
+                            <h6 className="title">Área (m²)</h6>
                         </a>
                     </header>
                     <div className="filter-content collapse show" id="collapse_7">
@@ -371,9 +372,11 @@ export const Filter = (props) => {
                                 <input type="checkbox" value="5" onChange={handleChangebaths}/>
                                 <span className="btn btn-light"> 5+ </span>
                             </label>
+                            
                         </div>
                     </div>
                 </article>
+
 
                 <article className="filter-group">
                     <header className="card-header">
@@ -401,6 +404,7 @@ export const Filter = (props) => {
                                 <input type="checkbox"  onChange={handleChangeGarajes}/>
                                 <span className="btn btn-light"> 4 </span>
                             </label>
+                           
                             <label className="checkbox-btn">
                                 <input type="checkbox"  onChange={handleChangeGarajes}/>
                                 <span className="btn btn-light"> 5+ </span>

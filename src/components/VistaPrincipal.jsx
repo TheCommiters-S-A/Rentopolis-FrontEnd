@@ -16,6 +16,8 @@ const useForceUpdate=()=>{
     return [increment,count];
 }
 
+
+
 export const VistaPrincipal = (props) => {
 
     let filters_values = {
@@ -40,6 +42,7 @@ export const VistaPrincipal = (props) => {
     const [filtersState,setFiltersState]=useState(filters_values);
     const [forceUpdate,forceUpdateValue]=useForceUpdate();
     const [numeroDeInmuebles, setNumeroDeInmuebles] = useState(0);
+
     const handleChangeNumeroDeInmuebles = (numero) => {
         setNumeroDeInmuebles(numero);
     };
@@ -97,6 +100,13 @@ export const VistaPrincipal = (props) => {
                             <header className="border-bottom mb-4 pb-3">
                                 <div className="form-inline">
                                     <span className="mr-md-auto">{numeroDeInmuebles} inmuebles encontrados </span>
+
+                                    <select className="mr-2 form-control">
+                                        <option>Últimos inmuebles</option>
+                                        <option>Más populares</option>
+                                        <option>Más económicos</option>
+                                        <option>Más costosos</option>
+                                    </select>
 
                                 </div>
                             </header>
