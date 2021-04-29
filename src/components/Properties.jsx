@@ -1,31 +1,72 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React from 'react';
 import {Property} from './Property';
-
 
 
 export const Properties = (props) => {
 
+    const filters = props.filter
+
+    let properties = props.properties;
 
 
-    const [properties, setProperties] = useState([]);
+    if(!isNaN(filters.minPrecio)){
+        properties = properties.filter(item => filters.minPrecio<=item.price);
+    }
 
-    useEffect(() => {
-        axios.get("https://rentopolis.herokuapp.com/home/properties")
-            .then(response => {
-                var APIResponse = response.data;
-                let finalProperties = [...properties]
-                if (APIResponse.length !== properties.length) {
-                    finalProperties = APIResponse
+    if(!isNaN(filters.maxPrecio)){
+        properties = properties.filter(item => item.price<=filters.maxPrecio);
+    }
 
-                }
-                setProperties(finalProperties)
-                props.amountProperties(finalProperties.length)
+    if(filters.name!==""){
+        properties = properties.filter(item => item.description.includes(filters.name));
+    }
 
-            }).catch(error => {
+    if(filters.type!==""){
+        properties = properties.filter(item => item.type.includes(filters.type));
+    }
 
-        });
-    }, [properties]);// eslint-disable-line react-hooks/exhaustive-deps
+    if(!isNaN(filters.minArea)){
+        properties = properties.filter(item => filters.minArea<=item.area);
+    }
+
+    if(!isNaN(filters.maxArea)){
+        properties = properties.filter(item => item.area<=filters.maxArea);
+    }
+
+    if(!isNaN(filters.habitaciones)){
+        properties = properties.filter(item => item.numberOfRooms===filters.habitaciones);
+    }
+
+    if(!isNaN(filters.baths)){
+        properties = properties.filter(item => item.numBathrooms===filters.baths);
+    }
+
+    if(!isNaN(filters.garajes)){
+        properties = properties.filter(item => item.garajes===filters.garajes);
+    }
+    
+    if(filters.ascensor){
+        properties = properties.filter(item => item.elevator===filters.ascensor);
+    }
+
+    if(filters.infantil){
+        properties = properties.filter(item => item.infanti===filters.infantil);
+    }
+
+    if(filters.gimnasio){
+        properties = properties.filter(item => item.gym===filters.gimnasio);
+    }
+
+    if(filters.vigilancia){
+        properties = properties.filter(item => item.surveillance===filters.vigilancia);
+    }
+
+    if(filters.comunal){
+        properties = properties.filter(item => item.communityRoom===filters.comunal);
+    }
+
+    console.log(filters);
+
 
     return (
 
@@ -45,4 +86,4 @@ export const Properties = (props) => {
 
         </div>
     )
-}
+        }
