@@ -137,12 +137,12 @@ export const Profile = (props) => {
                         <div className="form-row margin-div">
                             <div className="form-group col-md-6">
                                 <label htmlFor="contraseña">Contraseña nueva:</label>
-                                <input type="text" className="form-control" id="contraseña" placeholder="Ingresa contraseña"  minLength="8" onChange={handleAblePassword}/>
+                                <input type="password" className="form-control" id="contraseña" placeholder="Ingresa contraseña"  minLength="8" onChange={handleAblePassword}/>
                                 <small id="contraseñaHelp" className="form-text text-muted">Ingresa contraseña si y solo si deseas cambiarla. Longitud mínima de 8</small>
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="confirmarContraseña">Confirmar contraseña:</label>
-                                <input type="text" className="form-control" id="confirmarContraseña" placeholder="Ingresa contraseña" disabled/>
+                                <input type="password" className="form-control" id="confirmarContraseña" placeholder="Ingresa contraseña" disabled/>
                             </div>
                         </div>
                         
