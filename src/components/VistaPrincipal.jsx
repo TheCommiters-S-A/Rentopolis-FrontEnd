@@ -55,7 +55,6 @@ export const VistaPrincipal = (props) => {
             properties = [...properties]
             if (APIResponse.length !== properties.length) {
                 properties = APIResponse
-                console.log(properties,"Api call");
                 setProperties(response.data)
             }
 
@@ -67,9 +66,6 @@ export const VistaPrincipal = (props) => {
         })
     });
     },[]);
-
-    
-    console.log(propertiesState)
 
     const handleFilter =(new_filter)=>{
         setFiltersState(new_filter);
