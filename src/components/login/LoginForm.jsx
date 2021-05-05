@@ -9,6 +9,7 @@ import {useFirebaseApp} from 'reactfire';
 import 'firebase/auth';
 import Swal from 'sweetalert2'
 import Link from "@material-ui/core/Link";
+import * as UserAPI from '../api/UserAPI.js';
 
 const useStyle = makeStyles({
     textFields: {
@@ -76,9 +77,13 @@ export const LoginForm = props => {
     
     const signin = async (e) => {
         e.preventDefault();
+        UserAPI.GetUserByEmail(values.user,function(response){
+            var test=localStorage.getItem("user");
+            console.log(test); 
+        })
         await firebase.auth().signInWithEmailAndPassword(values.user, values.password)
             .then(user => {
-                window.location.href = "/inicio";
+                //window.location.href = "/inicio";
             })
             .catch(error => {
                 Swal.fire({

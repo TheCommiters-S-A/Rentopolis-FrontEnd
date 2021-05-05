@@ -10,7 +10,7 @@ export const Upload = () => {
     var FormData = require('form-data');
 
     const handlePictureChange = (e) =>{
-        setPicturesState(e.target.files[0])
+        setPicturesState(e.target.files[0]);
         console.log(picturesState);
     }
 

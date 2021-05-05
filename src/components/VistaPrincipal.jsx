@@ -69,7 +69,7 @@ export const VistaPrincipal = (props) => {
     },[]);
 
     
-    console.log(propertiesState)
+    console.log(localStorage.getItem("user")+" user");
 
     const handleFilter =(new_filter)=>{
         setFiltersState(new_filter);
