@@ -19,8 +19,8 @@ export const Property = (props) => {
                         props.images.map((item)=>
                             <img src={'data:image/jpeg;base64,'+item} alt="i"></img>
                         )*/}
-                        {/*<img alt="imagen" className="img-wrap" src={props.picture}/>
-                        <img className="img-wrap" src={props.picture}/>*/}
+                        {/*<img alt="imagen" className="img-wrap" src={props.picture}/>*/}
+                        <img alt="imagen" className="img-wrap" src={props.picture}/>
                     </aside>
                     <div className="col-md-3">
                         <div className="info-main" align="center">

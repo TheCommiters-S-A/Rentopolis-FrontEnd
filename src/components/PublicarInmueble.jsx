@@ -61,7 +61,6 @@ export const PublicarInmueble = (props) => {
 
     const handleChangeImagen = (imagenData) => {
         setImagen([...imagen,imagenData]);
-        console.log(imagen);
     };
 
     const handleChangePrecio = (event) => {

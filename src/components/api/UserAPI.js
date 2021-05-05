@@ -10,7 +10,7 @@ export function postNewUser(id,_name,phoneNumber,email,passwd){
         "email": email,
         "passwd": passwd
     }).then(function(response){
-        console.log(response);
+        return response;
     })
 }
 
