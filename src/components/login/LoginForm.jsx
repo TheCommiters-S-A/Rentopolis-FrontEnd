@@ -81,7 +81,7 @@ export const LoginForm = props => {
         })
         await firebase.auth().signInWithEmailAndPassword(values.user, values.password)
             .then(user => {
-                //window.location.href = "/inicio";
+                window.location.href = "/inicio";
             })
             .catch(error => {
                 Swal.fire({
