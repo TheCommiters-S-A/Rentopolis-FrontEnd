@@ -68,9 +68,6 @@ export const VistaPrincipal = (props) => {
     });
     },[]);
 
-    
-    console.log(localStorage.getItem("user")+" user");
-
     const handleFilter =(new_filter)=>{
         setFiltersState(new_filter);
         forceUpdate();

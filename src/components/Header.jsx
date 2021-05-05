@@ -39,7 +39,7 @@ export const Header = (props) => {
                         <div className="widgets-wrap float-md-right">
 
                             <div className="widget-header">
-                                <a href="/#" className="icon icon-sm ">
+                                <a href="/profile" className="icon icon-sm ">
                                     <AccountCircleIcon style={{fontSize: 40}}/>
                                 </a>
                             </div>

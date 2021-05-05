@@ -78,8 +78,6 @@ export const LoginForm = props => {
     const signin = async (e) => {
         e.preventDefault();
         UserAPI.GetUserByEmail(values.user,function(response){
-            var test=localStorage.getItem("user");
-            console.log(test); 
         })
         await firebase.auth().signInWithEmailAndPassword(values.user, values.password)
             .then(user => {
