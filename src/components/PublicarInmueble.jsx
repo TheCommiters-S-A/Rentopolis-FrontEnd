@@ -143,6 +143,7 @@ export const PublicarInmueble = (props) => {
         PropertyAPI.postProperty(property,function(idProperty){ 
             imagen.map((item)=>{
             item.append("propertyId",idProperty);
+            return true;
             }
         )})
     }
