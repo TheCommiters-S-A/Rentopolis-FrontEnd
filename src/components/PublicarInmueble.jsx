@@ -9,8 +9,8 @@ import {makeStyles} from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Button from '@material-ui/core/Button';
-import * as PropertyAPI from './api/PropertyAPI.js';
-import {ImageUpload} from "./ImageUpload";
+import axios from "axios";
+import Swal from 'sweetalert2';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -35,7 +35,7 @@ export const PublicarInmueble = (props) => {
     const classNamees = useStyles();
 
     const [tipoDeInmueble, setTipoDeInmueble] = React.useState('');
-    const [imagen, setImagen] = React.useState([]);
+    const [imagen, setImagen] = React.useState('');
     const [descripcion, setDescripcion] = React.useState('');
     const [precio, setPrecio] = React.useState('');
     const [estrato, setEstrato] = React.useState('');
@@ -59,8 +59,8 @@ export const PublicarInmueble = (props) => {
         setDescripcion(event.target.value);
     };
 
-    const handleChangeImagen = (imagenData) => {
-        setImagen([...imagen,imagenData]);
+    const handleChangeImagen = (event) => {
+        setImagen(event.target.value);
     };
 
     const handleChangePrecio = (event) => {
@@ -114,8 +114,10 @@ export const PublicarInmueble = (props) => {
     const handleChangeTieneSalonComunal = (event) => {
         setTieneSalonComunal(event.target.checked);
     };
+
+
     let property = {
-        id: null,
+        id: 1213,
         area: area,
         price: precio,
         location: {
@@ -131,21 +133,34 @@ export const PublicarInmueble = (props) => {
         surveillance: tieneVigilancia,
         gym: tieneGym,
         furniture: tieneMuebles,
+        image: imagen,
         address: direccion,
         neighborhood: barrio,
-        stratum: estrato,
-        images:[]
+        stratum: estrato
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        PropertyAPI.postProperty(property,function(idProperty){ 
-            imagen.map((item)=>{
-            item.append("propertyId",idProperty);
-            return true;
-            }
-        )})
+        axios.post("https://rentopolis.herokuapp.com/home/property/", property)
+            .then(response => {
+                return response.data;
+            })
+            .then(Response => {
+                Swal.fire(
+                    '¡Súper!',
+                    'Inmueble publicado',
+                    'success'
+                )
+            }).catch(error => {
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Error publicando el inmueble'
+            })
+        });
     }
+
     return (
         <div className="App">
             <HeaderSimple></HeaderSimple>
@@ -207,8 +222,7 @@ export const PublicarInmueble = (props) => {
                                                     variant="contained"
                                                     component="label"
                                                 >
-                                                    <ImageUpload handleChangeImagen={handleChangeImagen}></ImageUpload>
-                                                    
+                                                    <input  required value={imagen} onChange={handleChangeImagen} type="file"/>
                                                 </Button>
                                             </div>
 

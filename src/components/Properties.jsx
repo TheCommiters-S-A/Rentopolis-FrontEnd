@@ -65,6 +65,8 @@ export const Properties = (props) => {
         properties = properties.filter(item => item.communityRoom===filters.comunal);
     }
 
+    console.log(filters);
+
 
     return (
 

@@ -9,7 +9,6 @@ import {useFirebaseApp} from 'reactfire';
 import 'firebase/auth';
 import Swal from 'sweetalert2'
 import Link from "@material-ui/core/Link";
-import * as UserAPI from '../api/UserAPI.js';
 
 const useStyle = makeStyles({
     textFields: {
@@ -77,8 +76,6 @@ export const LoginForm = props => {
     
     const signin = async (e) => {
         e.preventDefault();
-        UserAPI.GetUserByEmail(values.user,function(response){
-        })
         await firebase.auth().signInWithEmailAndPassword(values.user, values.password)
             .then(user => {
                 window.location.href = "/inicio";
