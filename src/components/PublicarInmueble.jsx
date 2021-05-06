@@ -140,9 +140,11 @@ export const PublicarInmueble = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         PropertyAPI.postProperty(property,function(idProperty){ 
-            imagen.map((item)=>{
-            item.append("propertyId",idProperty);
-            return true;
+            imagen.forEach((item)=>{
+                console.log(idProperty);
+                console.log(item);
+                item.append("propertyId",idProperty);
+                PropertyAPI.postPictureToProperty(item);
             }
         )})
     }

@@ -77,7 +77,7 @@ export const Properties = (props) => {
                                   area={item.area}
                                   numBathrooms={item.numberOfBathRooms}
                                   numBedrooms={item.numberOfRooms}
-                                  picture={item.picture}
+                                  pictures={item.images}
                     />
                 );
             })}

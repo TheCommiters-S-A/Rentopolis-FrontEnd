@@ -1,4 +1,6 @@
 import React from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import {Carousel} from 'react-responsive-carousel';
 
 export const Property = (props) => {
     var formatter = new Intl.NumberFormat('en-US', {
@@ -14,15 +16,14 @@ export const Property = (props) => {
         <div>
             <article className="card card-product-list">
                 <div className="row no-gutters">
-                    <aside className="col-md-8">
-                    {/*<img src={'data:image/jpeg;base64,'+item} alt="i"></img>
-                        props.images.map((item)=>
-                            <img src={'data:image/jpeg;base64,'+item} alt="i"></img>
-                        )*/}
-                        {/*<img alt="imagen" className="img-wrap" src={props.picture}/>*/}
-                        <img alt="imagen" className="img-wrap" src={props.picture}/>
-                    </aside>
-                    <div className="col-md-3">
+                    <Carousel showThumbs={false} width="500px"  >
+                        {/*<img alt="imagen" className="img-wrap" src={props.picture}/>
+                        <img alt="imagen" className="img-wrap" src={props.pictures}/>*/}
+                        {props.pictures.map((image)=>{
+                            return <div><img width className="img-wrap" src={"https://rentopolis.herokuapp.com/home/picture2/"+image}/></div>
+                        })}
+                    </Carousel>
+                    <div className="col-md-3" >
                         <div className="info-main" align="center">
                             <a href="/inmueble" className="h5 title"> {props.name} </a>
 
