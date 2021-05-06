@@ -9,12 +9,12 @@ test('Profile Simple', () => {
   const linkElement = screen.getByText(/Nombre/i);
   expect(linkElement).toBeInTheDocument();
 });
-/*
+
 test('Property Simple', () => {
   render(<Property />);
   const linkElement = screen.getByText(/Baños/i);
   expect(linkElement).toBeInTheDocument();
-});*/
+});
 
 test('Properties', () => {
   render(<VistaPrincipal />);
