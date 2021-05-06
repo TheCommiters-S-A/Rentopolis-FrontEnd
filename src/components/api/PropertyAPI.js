@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 
 
 const apiaddrH = 'https://rentopolis.herokuapp.com'
+//const apiaddrH = 'http://localhost:8080'
 export function getProperties(){
 
 let properties=[];
@@ -48,7 +49,7 @@ export  function postProperty(property,callback){
         });
 }
 
-export function  postPictureToProperty(data){
+export function  postPictureToProperty(data,callback){
     return(axios({
         url:apiaddrH+"/home/property/picture",
         method:'POST',
