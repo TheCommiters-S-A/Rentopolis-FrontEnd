@@ -16,7 +16,7 @@ export const Property = (props) => {
         <div>
             <article className="card card-product-list">
                 <div className="row no-gutters">
-                    <Carousel showThumbs={false} width="500px">
+                    <Carousel showThumbs={false} width="580px">
                         {/*<img alt="imagen" className="img-wrap" src={props.picture}/>
                         <img alt="imagen" alt="imagen" className="img-wrap" src={props.pictures}/>*/}
                         {props.pictures.map((image) => {
@@ -25,7 +25,7 @@ export const Property = (props) => {
 
                         })}
                     </Carousel>
-                    <div className="col-md-5" align="center">
+                    <div className="col-md-4" align="center">
                         <div className="info-main" align="center">
                             <a href="/inicio" className="h5 title"> {props.name} </a>
 
