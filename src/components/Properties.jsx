@@ -1,12 +1,31 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Property} from './Property';
+import axios from 'axios';
 
 
 export const Properties = (props) => {
 
     const filters = props.filter
 
-    let properties = props.properties;
+
+    let [properties, setProperties] = useState([]);
+
+    useEffect(() => {
+        axios.get("https://rentopolis.herokuapp.com/home/properties")
+            .then(response => {
+                var APIResponse = response.data;
+                let finalProperties = [...properties]
+                if (APIResponse.length !== properties.length) {
+                    finalProperties = APIResponse
+
+                }
+                setProperties(finalProperties)
+                props.amountProperties(finalProperties.length)
+
+            }).catch(error => {
+
+        });
+    }, [properties]);// eslint-disable-line react-hooks/exhaustive-deps
 
 
     if(!isNaN(filters.minPrecio)){

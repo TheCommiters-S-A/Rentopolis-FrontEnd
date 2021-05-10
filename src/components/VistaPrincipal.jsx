@@ -97,12 +97,7 @@ export const VistaPrincipal = (props) => {
                                 <div className="form-inline">
                                     <span className="mr-md-auto">{numeroDeInmuebles} inmuebles encontrados </span>
 
-                                    <select className="mr-2 form-control">
-                                        <option>Últimos inmuebles</option>
-                                        <option>Más populares</option>
-                                        <option>Más económicos</option>
-                                        <option>Más costosos</option>
-                                    </select>
+
 
                                 </div>
                             </header>

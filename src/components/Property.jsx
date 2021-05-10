@@ -16,14 +16,16 @@ export const Property = (props) => {
         <div>
             <article className="card card-product-list">
                 <div className="row no-gutters">
-                    <Carousel showThumbs={false} width="500px"  >
+                    <Carousel showThumbs={false} width="500px">
                         {/*<img alt="imagen" className="img-wrap" src={props.picture}/>
-                        <img alt="imagen" className="img-wrap" src={props.pictures}/>*/}
-                        {props.pictures.map((image)=>{
-                            return <div><img width className="img-wrap" src={"https://rentopolis.herokuapp.com/home/picture2/"+image}/></div>
+                        <img alt="imagen" alt="imagen" className="img-wrap" src={props.pictures}/>*/}
+                        {props.pictures.map((image) => {
+                            return <div><img width className="img-wrap" alt="imagen"
+                                             src={"https://rentopolis.herokuapp.com/home/picture2/" + image}/></div>
+
                         })}
                     </Carousel>
-                    <div className="col-md-3" >
+                    <div className="col-md-3">
                         <div className="info-main" align="center">
                             <a href="/inmueble" className="h5 title"> {props.name} </a>
 
