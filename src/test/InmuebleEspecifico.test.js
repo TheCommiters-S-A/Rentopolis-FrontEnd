@@ -24,17 +24,7 @@ test('Header simple', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('Property', () => {
-  render(<Property />);
-  expect(screen.getByText(/Baños/i)).toBeInTheDocument();
 
-});
-
-test('Property 2', () => {
-  render(<Property />);
-  expect(screen.getByAltText (/imagen/i)).toBeInTheDocument();
-
-});
 
 test('Properties', () => {
   render(<VistaPrincipal />);

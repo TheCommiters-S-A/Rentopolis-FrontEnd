@@ -10,12 +10,11 @@ import Swal from "sweetalert2";
 const apiaddrH = 'https://rentopolis.herokuapp.com'
 
 
-const useForceUpdate=()=>{
-    const [count,setCount]=useState(0);
-    const increment =()=>setCount(prevCount => prevCount+1);
-    return [increment,count];
+const useForceUpdate = () => {
+    const [count, setCount] = useState(0);
+    const increment = () => setCount(prevCount => prevCount + 1);
+    return [increment, count];
 }
-
 
 
 export const VistaPrincipal = (props) => {
@@ -31,16 +30,16 @@ export const VistaPrincipal = (props) => {
         "baths": Number.NaN,
         "garajes": Number.NaN,
         "ascensor": false,
-        "infantil":false,
-        "vigilancia":false,
-        "gimnasio":false,
-        "comunal":false
+        "infantil": false,
+        "vigilancia": false,
+        "gimnasio": false,
+        "comunal": false
     }
 
     const [propertiesState, setProperties] = useState([]);
 
-    const [filtersState,setFiltersState]=useState(filters_values);
-    const [forceUpdate,forceUpdateValue]=useForceUpdate();
+    const [filtersState, setFiltersState] = useState(filters_values);
+    const [forceUpdate, forceUpdateValue] = useForceUpdate();
     const [numeroDeInmuebles, setNumeroDeInmuebles] = useState(0);
 
     const handleChangeNumeroDeInmuebles = (numero) => {
@@ -48,37 +47,36 @@ export const VistaPrincipal = (props) => {
     };
 
     useEffect(() => {
-        let properties=[];
-    axios.get(apiaddrH + "/home/properties")
-        .then(response => {
-            var APIResponse = response.data;
-            properties = [...properties]
-            if (APIResponse.length !== properties.length) {
-                properties = APIResponse
-                setProperties(response.data)
-            }
+        let properties = [];
+        axios.get(apiaddrH + "/home/properties")
+            .then(response => {
+                var APIResponse = response.data;
+                properties = [...properties]
+                if (APIResponse.length !== properties.length) {
+                    properties = APIResponse
+                    setProperties(response.data)
+                }
 
-        }).catch(error => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: error.message,
-        })
-    });
-    },[]);
+            }).catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.message,
+            })
+        });
+    }, []);
 
-    const handleFilter =(new_filter)=>{
+    const handleFilter = (new_filter) => {
         setFiltersState(new_filter);
         forceUpdate();
     }
-    const handleLoad =()=>{
+    const handleLoad = () => {
         setProperties(PropertyAPI.getProperties());
     }
 
 
-    
     return (
-        <div className="App" >
+        <div className="App">
             {handleLoad}
             <Header filters={filtersState}></Header>
 
@@ -97,16 +95,11 @@ export const VistaPrincipal = (props) => {
                                 <div className="form-inline">
                                     <span className="mr-md-auto">{numeroDeInmuebles} inmuebles encontrados </span>
 
-                                    <select className="mr-2 form-control">
-                                        <option>Últimos inmuebles</option>
-                                        <option>Más populares</option>
-                                        <option>Más económicos</option>
-                                        <option>Más costosos</option>
-                                    </select>
 
                                 </div>
                             </header>
-                            <Properties amountProperties={handleChangeNumeroDeInmuebles} filter={filtersState} key={forceUpdateValue} properties={propertiesState}/>
+                            <Properties amountProperties={handleChangeNumeroDeInmuebles} filter={filtersState}
+                                        key={forceUpdateValue} properties={propertiesState}/>
                         </main>
                     </div>
                 </div>
