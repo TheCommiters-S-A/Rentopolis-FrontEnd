@@ -25,9 +25,9 @@ export const Property = (props) => {
 
                         })}
                     </Carousel>
-                    <div className="col-md-3">
+                    <div className="col-md-5" align="center">
                         <div className="info-main" align="center">
-                            <a href="/inmueble" className="h5 title"> {props.name} </a>
+                            <a href="/inicio" className="h5 title"> {props.name} </a>
 
                             {/*<a href="#" className="h5 title"> Apartamento en arriendo, SUBA, Bogotá D.C </a>*/}
                             <br/>
@@ -59,7 +59,7 @@ export const Property = (props) => {
                         <br/>
 
                         <p>
-                            <a href="/#" className="btn btn-primary btn-block"> Contactar </a>
+                            <a href="/inicio" className="btn btn-primary btn-block"> Contactar </a>
                         </p>
                     </div>
                 </div>
