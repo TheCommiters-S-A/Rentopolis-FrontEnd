@@ -4,17 +4,18 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import './profile.css';
 import Swal from 'sweetalert2';
-
+import * as UserAPI from '../api/UserAPI.js';
+import {useFirebaseApp} from 'reactfire';
 
 export const Profile = (props) => {
     
-
+    const firebase = useFirebaseApp();
     const [passwd, setPsswd] = useState();
+    var user= JSON.parse(localStorage.getItem('User'));
+
 
     useEffect(() => {
-        console.log(localStorage.getItem('user'));
-        
-        axios.get("https://rentopolis.herokuapp.com/home/user/0")
+        axios.get("https://rentopolis.herokuapp.com/home/user/"+user.id)
             .then(response => {
                 
                 let info= response.data;
@@ -37,36 +38,63 @@ export const Profile = (props) => {
                     title: 'Oops...',
                     text: 'Las contraseñas deben ser iguales',
                 })
-        }else{
-            if(document.getElementById("contraseña").value !== ""){
-                axios.put('https://rentopolis.herokuapp.com/home/0', {
-                    "id": "0",
-                    "name": document.getElementById("nombre").value,
-                    "phoneNumber": document.getElementById("numero").value,
-                    "email": document.getElementById("email").value,
-                    "passwd": document.getElementById("contraseña").value
-                }).then(function(response){
-                    console.log(response);
-                })
-                
-                
-            }else{
-                axios.put('https://rentopolis.herokuapp.com/home/0', {
-                    "id":"0",
-                    "name": document.getElementById("nombre").value,
-                    "phoneNumber": document.getElementById("numero").value,
-                    "email": document.getElementById("email").value,
-                    "passwd": passwd
-                }).then(function(response){
-                    console.log(response);
-                })
-            }
+        }else{ 
             
-            localStorage.setItem('user',document.getElementById("email").value);
-            window.location.href = "/inicio";
+            firebase.auth().onAuthStateChanged(function(userFire) {
+                if(userFire){
+                    if(document.getElementById("contraseña").value !== ""){
+                        console.log(document.getElementById("contraseña").value);
+                        userFire.updatePassword(document.getElementById("contraseña").value).then(function() {
+                            axios.put('https://rentopolis.herokuapp.com/home/'+user.id, {
+                                "id": user.id,
+                                "name": document.getElementById("nombre").value,
+                                "phoneNumber": document.getElementById("numero").value,
+                                "email": document.getElementById("email").value,
+                                "passwd": document.getElementById("contraseña").value
+                            }).then(function(response){
+                                console.log(response);
+                                firebase.auth().signInWithEmailAndPassword(user.email, document.getElementById("contraseña").value);
+                                firebase.auth().onAuthStateChanged(function(userName) {
+                                    if(userName){
+                                        userName.updateEmail(document.getElementById("email").value).then(function(){
+                                            UserAPI.GetUserByEmail(document.getElementById("email").value,function(response){}); 
+                                            window.location.href = "/inicio";
+                                        }).catch(function(error) {
+                                            console.log(error);
+                                        });
+                                    }
+                                })
+                            })
+                        }).catch(function(error) {
+                            console.log(error);
+                        })
+                    }else{
+                        axios.put('https://rentopolis.herokuapp.com/home/'+user.id, {
+                            "id": user.id,
+                            "name": document.getElementById("nombre").value,
+                            "phoneNumber": document.getElementById("numero").value,
+                            "email": document.getElementById("email").value,
+                            "passwd": passwd
+                        }).then(function(response){
+                            console.log(response);
+                            firebase.auth().signInWithEmailAndPassword(user.email, document.getElementById("contraseña").value);
+                            firebase.auth().onAuthStateChanged(function(userName) {
+                                if(userName){
+                                    userName.updateEmail(document.getElementById("email").value).then(function(){
+                                        UserAPI.GetUserByEmail(document.getElementById("email").value,function(response){}); 
+                                        window.location.href = "/inicio";
+                                    }).catch(function(error) {
+                                        console.log(error);
+                                    });
+                                }
+                            })
+                        })
+                    } 
+                    
+                }
+            });
             
         }
-        
     }
 
     const handleAblePassword = (event) => {
@@ -80,6 +108,37 @@ export const Profile = (props) => {
         }
     }
     
+    const handleDeleteUser = (event) =>{
+        event.preventDefault();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Estas seguro?',
+            text: 'Estas seguro que quieres borrar la cuenta?',
+            showCancelButton: true,
+            confirmButtonText: "Si, borrar!",
+            cancelButtonText: "No!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                firebase.auth().signInWithEmailAndPassword(document.getElementById("email").value, document.getElementById("contraseña").value);
+                firebase.auth().onAuthStateChanged(function(userFire) {
+                    if(userFire){
+                        userFire.delete().then(function(){
+                            axios.delete('https://rentopolis.herokuapp.com/home/'+user.id).then(function(){
+                                Swal.fire(
+                                    'Borrado!',
+                                    'Tu cuenta ha sido borrada.',
+                                    'success'
+                                )
+                            });
+                            window.location.href = "/login";
+                        }).catch(function(error) {
+                            console.log(error);
+                        })
+                    }
+                });
+            }
+        })
+    }
 
     return (
         <div className="App">
@@ -152,10 +211,7 @@ export const Profile = (props) => {
                                 <button className="btn btn-primary boton-estilo " >Actualizar perfil</button>
                             </div>
                             <div className="form-group col-md-2">
-                                <button className="btn btn-primary boton-estilo" >Mis propiedas</button>
-                            </div>
-                            <div className="form-group col-md-2">
-                                <button className="btn btn-primary boton-estilo " >Eliminar perfil</button>
+                                <button type="button" className="btn btn-primary boton-estilo " onClick={handleDeleteUser}>Eliminar perfil</button>
                             </div>
 
                         </div>

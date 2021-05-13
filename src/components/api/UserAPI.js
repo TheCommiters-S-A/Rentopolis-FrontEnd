@@ -16,7 +16,7 @@ export function postNewUser(id,_name,phoneNumber,email,passwd){
 
 export function GetUserByEmail(email,callback){
     axios.get(apiaddrH+"/home/user/email/"+email).then(response=>{
-        localStorage.setItem("user",JSON.stringify(response.data));
+        localStorage.setItem("User",JSON.stringify(response.data));
         callback(JSON.stringify(response.data.id));
     }).catch(error => {
         Swal.fire({
