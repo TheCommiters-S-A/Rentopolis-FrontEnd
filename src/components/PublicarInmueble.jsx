@@ -122,7 +122,7 @@ export const PublicarInmueble = (props) => {
             latitude: 0,
             longitude: 0
         },
-        typeProperty: tipoDeInmueble,
+        type: tipoDeInmueble,
         numberOfRooms: numHabitaciones,
         communityRoom: tieneSalonComunal,
         description: descripcion,
