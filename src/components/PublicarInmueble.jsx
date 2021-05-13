@@ -141,13 +141,10 @@ export const PublicarInmueble = (props) => {
         e.preventDefault()
         PropertyAPI.postProperty(property,function(idProperty){ 
             imagen.forEach((item)=>{
-                console.log(idProperty);
-                console.log(item);
                 item.append("propertyId",idProperty);
                 PropertyAPI.postPictureToProperty(item);
             }
         )});
-        window.location.href = "/inicio";
     }
     return (
         <div className="App">
