@@ -146,7 +146,8 @@ export const PublicarInmueble = (props) => {
                 item.append("propertyId",idProperty);
                 PropertyAPI.postPictureToProperty(item);
             }
-        )})
+        )});
+        window.location.href = "/inicio";
     }
     return (
         <div className="App">
